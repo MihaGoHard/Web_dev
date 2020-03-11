@@ -1,40 +1,40 @@
 <?PHP
-// çàäàíèÿ 1,2,3,5
-// getGETParameter - ïîëó÷èòü ïàðàìåòð GetString
+// Ã§Ã Ã¤Ã Ã­Ã¨Ã¿ 1,2,3,5
+// getGETParameter - Ã¯Ã®Ã«Ã³Ã·Ã¨Ã²Ã¼ Ã¯Ã Ã°Ã Ã¬Ã¥Ã²Ã° GetString
 function getGETParameter(string $ident): string
 {
     return isset($_GET[$ident]) ? (string)$_GET[$ident] : null;
 }
 
-// çàäàíèå 3
-// valueRepeatSymbols - ïîëó÷èòü êîë-âî ïîâòîðÿþùèõñÿ ñèìâîëîâ â ñòðîêå
+// Ã§Ã Ã¤Ã Ã­Ã¨Ã¥ 3
+// valueRepeatSymbols - Ã¯Ã®Ã«Ã³Ã·Ã¨Ã²Ã¼ ÃªÃ®Ã«-Ã¢Ã® Ã¯Ã®Ã¢Ã²Ã®Ã°Ã¿Ã¾Ã¹Ã¨ÃµÃ±Ã¿ Ã±Ã¨Ã¬Ã¢Ã®Ã«Ã®Ã¢ Ã¢ Ã±Ã²Ã°Ã®ÃªÃ¥
 function valueRepeatSymbols(string $str): string
 {
-    $arrStr = str_split($str);                  // ïåðåâîä â ìàññèâ
-    sort($arrStr);                              // ñîðòèðîâêà
-    $sortStr = implode($arrStr);                // ïåðåâîä â ñòðîêó
-    preg_match_all('/(.)\1+/', $sortStr, $num); // çàïèñü â ìàññèâ ïîâòîðÿþùèõñÿ ñèìâîëîâ
-    $num = implode($num[0]);                    // ïåðåâîä â ñòðîêó
-    return strlen($num);                        // äëèííà ñòðîêè ïîâò-ñÿ ñèìâîëîâ  
+    $arrStr = str_split($str);                  // Ã¯Ã¥Ã°Ã¥Ã¢Ã®Ã¤ Ã¢ Ã¬Ã Ã±Ã±Ã¨Ã¢
+    sort($arrStr);                              // Ã±Ã®Ã°Ã²Ã¨Ã°Ã®Ã¢ÃªÃ 
+    $sortStr = implode($arrStr);                // Ã¯Ã¥Ã°Ã¥Ã¢Ã®Ã¤ Ã¢ Ã±Ã²Ã°Ã®ÃªÃ³
+    preg_match_all('/(.)\1+/', $sortStr, $num); // Ã§Ã Ã¯Ã¨Ã±Ã¼ Ã¢ Ã¬Ã Ã±Ã±Ã¨Ã¢ Ã¯Ã®Ã¢Ã²Ã®Ã°Ã¿Ã¾Ã¹Ã¨ÃµÃ±Ã¿ Ã±Ã¨Ã¬Ã¢Ã®Ã«Ã®Ã¢
+    $num = implode($num[0]);                    // Ã¯Ã¥Ã°Ã¥Ã¢Ã®Ã¤ Ã¢ Ã±Ã²Ã°Ã®ÃªÃ³
+    return strlen($num);                        // Ã¤Ã«Ã¨Ã­Ã­Ã  Ã±Ã²Ã°Ã®ÃªÃ¨ Ã¯Ã®Ã¢Ã²-Ã±Ã¿ Ã±Ã¨Ã¬Ã¢Ã®Ã«Ã®Ã¢  
 }
 
 
-//  çàäàíèÿ 4,5
-//  arraysMerge - äîáàâëÿåò ê ìàññèâó èç ôàéëà íåïóñòûå ýëåìåíòû ìàññèâà èç querystring
-//  addDATAtoFILE - äîáàâëåíèå â ôàéë ìàññèâà
-//  dataFromFILE - èçâëå÷åíèå èç ôàéëà ìàññèâà
-//  ifKEYinSTRINGcheckVALUE - ôîðìàò-èå 'First Name' > 'first_name'; ïîèñê êëþ÷à â querystring;
-//  åñëè îí íàéäåí è åãî çíà÷åíèå íå ïóñòîå, òî âîçâðàò íîâoãî çíà÷åíèÿ, èíà÷å ïóñòîãî
+//  Ã§Ã Ã¤Ã Ã­Ã¨Ã¿ 4,5
+//  arraysMerge - Ã¤Ã®Ã¡Ã Ã¢Ã«Ã¿Ã¥Ã² Ãª Ã¬Ã Ã±Ã±Ã¨Ã¢Ã³ Ã¨Ã§ Ã´Ã Ã©Ã«Ã  Ã­Ã¥Ã¯Ã³Ã±Ã²Ã»Ã¥ Ã½Ã«Ã¥Ã¬Ã¥Ã­Ã²Ã» Ã¬Ã Ã±Ã±Ã¨Ã¢Ã  Ã¨Ã§ querystring
+//  addDATAtoFILE - Ã¤Ã®Ã¡Ã Ã¢Ã«Ã¥Ã­Ã¨Ã¥ Ã¢ Ã´Ã Ã©Ã« Ã¬Ã Ã±Ã±Ã¨Ã¢Ã 
+//  dataFromFILE - Ã¨Ã§Ã¢Ã«Ã¥Ã·Ã¥Ã­Ã¨Ã¥ Ã¨Ã§ Ã´Ã Ã©Ã«Ã  Ã¬Ã Ã±Ã±Ã¨Ã¢Ã 
+//  ifKEYinSTRINGcheckVALUE - Ã´Ã®Ã°Ã¬Ã Ã²-Ã¨Ã¥ 'First Name' > 'first_name'; Ã¯Ã®Ã¨Ã±Ãª ÃªÃ«Ã¾Ã·Ã  Ã¢ querystringa;
+//  Ã¥Ã±Ã«Ã¨ Ã®Ã­ Ã­Ã Ã©Ã¤Ã¥Ã­ Ã¨ Ã¥Ã£Ã® Ã§Ã­Ã Ã·Ã¥Ã­Ã¨Ã¥ Ã­Ã¥ Ã¯Ã³Ã±Ã²Ã®Ã¥, Ã²Ã® Ã¢Ã®Ã§Ã¢Ã°Ã Ã² Ã­Ã®Ã¢oÃ£Ã® Ã§Ã­Ã Ã·Ã¥Ã­Ã¨Ã¿, Ã¨Ã­Ã Ã·Ã¥ Ã¯Ã³Ã±Ã²Ã®Ã£Ã®
 function arraysMerge(array $fromFILE, array $fromGETstring): array
 {
-    $deletNullGETstring = array_diff($fromGETstring, array(''));       // óäàëåíèå èç ìàññèâà ýëåìåíòîâ ñ ïóñòûì çíà÷åíèåì 
+    $deletNullGETstring = array_diff($fromGETstring, array(''));       // Ã³Ã¤Ã Ã«Ã¥Ã­Ã¨Ã¥ Ã¨Ã§ Ã¬Ã Ã±Ã±Ã¨Ã¢Ã  Ã½Ã«Ã¥Ã¬Ã¥Ã­Ã²Ã®Ã¢ Ã± Ã¯Ã³Ã±Ã²Ã»Ã¬ Ã§Ã­Ã Ã·Ã¥Ã­Ã¨Ã¥Ã¬ 
     return $arrayResult = array_merge($fromFILE, $deletNullGETstring); 
      
 }
  
 function addDATAtoFILE(array $userData, string $fileAddres)
 {
-    $convertDATA = serialize($userData);    //  ñåðèàëèçàöèÿ ìàññèâà
+    $convertDATA = serialize($userData);    //  Ã±Ã¥Ã°Ã¨Ã Ã«Ã¨Ã§Ã Ã¶Ã¨Ã¿ Ã¬Ã Ã±Ã±Ã¨Ã¢Ã 
     $fileFORdata = fopen($fileAddres, 'w');          
     fwrite($fileFORdata, $convertDATA);           
     fclose($fileFORdata);                       
@@ -43,7 +43,7 @@ function addDATAtoFILE(array $userData, string $fileAddres)
 function dataFromFILE(string $fileUserData): array
 {
     $fileContent = file_get_contents($fileUserData);                      
-    $fileContent = unserialize($fileContent);         // àíñåðèàëèçàöèÿ                      
+    $fileContent = unserialize($fileContent);         // Ã Ã­Ã±Ã¥Ã°Ã¨Ã Ã«Ã¨Ã§Ã Ã¶Ã¨Ã¿                      
     return $fileContent;
 }
 
@@ -63,7 +63,7 @@ function ifKEYinSTRINGreturnVALUE(string $key): string
 
 
 //7
-// formatKEYS - ôîðìàòèðóåò êëþ÷è ìàññèâà, çàòåì ïåðåçàïèñûâàåò èõ â ìàññèâ
+// formatKEYS - Ã´Ã®Ã°Ã¬Ã Ã²Ã¨Ã°Ã³Ã¥Ã² ÃªÃ«Ã¾Ã·Ã¨ Ã¬Ã Ã±Ã±Ã¨Ã¢Ã , Ã§Ã Ã²Ã¥Ã¬ Ã¯Ã¥Ã°Ã¥Ã§Ã Ã¯Ã¨Ã±Ã»Ã¢Ã Ã¥Ã² Ã¨Ãµ Ã¢ Ã¬Ã Ã±Ã±Ã¨Ã¢
 function formatKEYS(&$data)
 {
     foreach ($data as $key => $value)
