@@ -1,5 +1,5 @@
 <?PHP
-// задания 1,2,3,5
+// задания 1,2,3,4,5
 // getGETParameter - получить параметр QueryString
 function getGETParameter(string $ident): string
 {
@@ -61,14 +61,8 @@ function ifKEYinSTRINGreturnVALUE(string $key): string
      }
 }
 
-// задание 7
 // formatKEYS - форматирует все ключи массива 'first_name' > 'First Name:'
 function formatKEYS(&$data)
-{
-    foreach ($data as $key => $value)
-    {
-        $newKey = ucwords(str_replace('_', ' ', $key.':')); // 'first_name' > 'First Name:'
-        if ($newKey != $key)
         {
             unset($data[$key]);
             $data[$newKey] = $value;
