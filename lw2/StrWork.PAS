@@ -8,7 +8,7 @@ USES
   FUNCTION GetQueryStringParameter(VAR Key: STRING): STRING;
   VAR
     LenQs, LenQw, PosW, LenUnS, i: INTEGER;
-    ReS, Qs: STRING;{çíà÷åíèå ôóíêöèè}
+    ReS, Qs: STRING;
   BEGIN
     IF LENGTH(Key) <> 0
     THEN

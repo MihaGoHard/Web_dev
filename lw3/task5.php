@@ -7,14 +7,14 @@ if ($_GET['email'] != null)
     $mailValue = getGETParameter('email');              
     if($mailValue != null)
     {
-        $fileAddres = 'D:\aStudy\PHP\lw3\data/'.$mailValue.'.txt'; //получить адрес файла
+        $fileAddres = 'D:\aStudy\PHP\lw3\data/'.$mailValue.'.txt'; //Р°РґСЂРµСЃ РїСЂРѕРІРµСЂСЏРµРјРѕРіРѕ С„Р°Р№Р»Р°
         if (file_exists($fileAddres))                           
         {
-            $fileContent = dataFromFILE($fileAddres);              //достать массив из файла
+            $fileContent = dataFromFILE($fileAddres);              //РґРѕСЃС‚Р°С‘С‚ РјР°СЃСЃРёРІ РёР· С„Р°Р№Р»Р°
             header("Content-Type: text/plain");
             foreach ($fileContent as $key => $value)       
             {
-                print $key.' '.$value.PHP_EOL;                     //печать в нужном формате
+                print $key.' '.$value.PHP_EOL;                     //РїРµС‡Р°С‚СЊ
             }        
         }
     }

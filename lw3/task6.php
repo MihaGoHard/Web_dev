@@ -4,7 +4,7 @@ include 'D:\aStudy\PHP\lw3\functions.php';
 
 if (ifKEYinSTRINGreturnVALUE('email') != null)                                         
 {                          
-    $keys = ['First Name:', 'Last Name:', 'Email:', 'Age:', 'Birthday:', 'Town:', 'Best Result:', 'Kind Of Sport:'];          // массив параметров
+    $keys = ['First Name:', 'Last Name:', 'Email:', 'Age:', 'Birthday:', 'Town:', 'Best Result:', 'Kind Of Sport:'];          // РїР°СЂР°РјРµС‚СЂС‹
     $keysNumber = count($keys);
     $valueMail = ifKEYinSTRINGreturnVALUE('email');
 
@@ -14,16 +14,16 @@ if (ifKEYinSTRINGreturnVALUE('email') != null)
     for  ($i = 0; $i < $keysNumber; $i++)
     {
          $value = ifKEYinSTRINGreturnVALUE($keys[$i]);                
-         $stringUserData += [$keys[$i] => $value];                    // заполнить массив параметрами и значениями из querystring
+         $stringUserData += [$keys[$i] => $value];                    // СЃРѕСЃС‚Р°РІРёС‚СЊ РјР°СЃСЃРёРІ РєР»СЋС‡ => Р·РЅР°С‡РµРЅРёРµ РёР· query string
     }        
 
     $toFileData = $stringUserData;
     $fileAddres = 'D:\aStudy\PHP\lw3\data/'.$valueMail.'.txt';   
            
-    if (file_exists($fileAddres))                                     // проверка существования такого  файла
+    if (file_exists($fileAddres))                                     // РїСЂРѕРІРµСЂРєР° СЃСѓС‰РµСЃС‚РІРѕРІР°РЅРёСЏ С‚Р°РєРѕРіРѕ С„Р°Р№Р»Р°
     {
         $fileUserData = dataFromFILE($fileAddres);
-        $toFileData = arraysMerge($fileUserData, $stringUserData);  // добавить в массив из файла непустые значения из массива query string       
+        $toFileData = arraysMerge($fileUserData, $stringUserData);  // РѕР±РЅРѕРІР»РµРЅРёРµ С„Р°Р№Р»Р° РґР°РЅРЅС‹РјРё РёР· query string       
     }
 
     addDATAtoFILE($toFileData, $fileAddres);

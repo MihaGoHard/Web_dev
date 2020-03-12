@@ -5,14 +5,14 @@ include 'D:\aStudy\PHP\lw3\functions.php';
 if (ifKEYinSTRINGreturnVALUE('email') != null)                                         
 {    
     $str = $_SERVER['QUERY_STRING'];
-    parse_str($str, $stringUserData);                                 //запарсить querystring в массив
+    parse_str($str, $stringUserData);                                 //Р·Р°РїР°СЂСЃРёС‚СЊ querystring РІ РјР°СЃСЃРёРІ
     formatKEYS($stringUserData);
     $toFileData = $stringUserData;
 
     $valueMail = ifKEYinSTRINGreturnVALUE('email');
     $fileAddres = 'D:\aStudy\PHP\lw3\data/'.$valueMail.'.txt';
                                                
-    if (file_exists($fileAddres))                                     // проверка существования такого  файла
+    if (file_exists($fileAddres))                                     // РїСЂРѕРІРµСЂРёС‚СЊ РЅР°Р»РёС‡РёРµ С„Р°Р№Р»Р°
     {        
         $fileUserData = dataFromFILE($fileAddres);
         $toFileData = array_merge($fileUserData, $stringUserData);       

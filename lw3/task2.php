@@ -2,10 +2,10 @@
 
 include 'D:\aStudy\PHP\lw3\functions.php';
 
-if ($_GET['identifire'] != null)                  // проверить наличие параметра в строке
+if ($_GET['identifire'] != null)                  
 {
     $ident = getGETParameter('identifire');       
-    if (preg_match('/^[a-zA-Z]/u', $ident) != 0)  //проверить первый символ на принадлежность к массиву букв
+    if (preg_match('/^[a-zA-Z]/u', $ident) != 0)  // РїРµСЂРІС‹Р№ СЃРёРјРІРѕР» Р±СѓРєРІР°
     {
         $result = 'YES';       
     }
@@ -14,12 +14,12 @@ if ($_GET['identifire'] != null)                  // проверить наличие параметра
         $result = 'NO. SR3 identifire := letter not comlited';
     }
 
-    if (preg_match_all('/[a-zA-Z0-9]/', $ident) != strlen($ident)) //проверить, что идент. состоит только из цифр и букв
+    if (preg_match_all('/[a-zA-Z0-9]/', $ident) != strlen($ident)) // СЃРѕСЃС‚РѕРёС‚ С‚РѕР»СЊРєРѕ РёР· Р±СѓРєРІ
     { 
         $result = 'NO. UNKNOWN SYMBOLS IN INPUT, SR3 not comlited';  
     }
 
-    if (preg_match_all('/\d+\D/', $ident) != 0)                    //проверить <идент>:=<идент><буква>
+    if (preg_match_all('/\d+\D/', $ident) != 0)                    // Р·Р° С†РёС„СЂРѕР№ С‚РѕР»СЊРєРѕ С†РёС„СЂР°
     {
         $result = 'NO. SR3 identifire := identifire-letter  not comlitied ';
     }

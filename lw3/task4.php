@@ -4,7 +4,7 @@ include 'D:\aStudy\PHP\lw3\functions.php';
 
 if (ifKEYinSTRINGreturnVALUE('email') != null)                                         
 {   
-    $key1 = 'First Name:';                           // $key - параметр данных пользователя               
+    $key1 = 'First Name:';                           // $key - РїР°СЂР°РјРµС‚СЂ РІ СЃС‚СЂРѕРєРµ Р·Р°РїСЂРѕСЃР°               
     $key2 = 'Last Name:';
     $key3 = 'Age:';                   
     $keyMail = 'Email:';
@@ -18,10 +18,10 @@ if (ifKEYinSTRINGreturnVALUE('email') != null)
     $toFileData = $stringUserData;
 
     $fileAddres = 'D:\aStudy\PHP\lw3\data/'.$valueMail.'.txt';              
-    if (file_exists($fileAddres))                                 // проверка существования такого  файла
+    if (file_exists($fileAddres))                                 // РїРѕРёСЃРє С„Р°Р№Р»Р° СЃ Р°РґСЂРµСЃРѕРј
     {
         $fileUserData = dataFromFILE($fileAddres);
-        $toFileData = arraysMerge($fileUserData, $stringUserData);  // добавить в массив из файла непустые значения из querystring      
+        $toFileData = arraysMerge($fileUserData, $stringUserData);  // РѕР±РЅРѕРІР»РµРЅРёРµ РґР°РЅРЅС‹С… РІ С„Р°Р№Р»Рµ РёР· querystring      
     }
 
     addDATAtoFILE($toFileData, $fileAddres);

@@ -1,40 +1,40 @@
 <?PHP
-// çàäàíèÿ 1,2,3,5
-// getGETParameter - ïîëó÷èòü ïàðàìåòð GetString
+// Ð·Ð°Ð´Ð°Ð½Ð¸Ñ 1,2,3,5
+// getGETParameter - Ð¿Ð¾Ð»ÑƒÑ‡Ð¸Ñ‚ÑŒ Ð¿Ð°Ñ€Ð°Ð¼ÐµÑ‚Ñ€ QueryString
 function getGETParameter(string $ident): string
 {
     return isset($_GET[$ident]) ? (string)$_GET[$ident] : null;
 }
 
-// çàäàíèå 3
-// valueRepeatSymbols - ïîëó÷èòü êîë-âî ïîâòîðÿþùèõñÿ ñèìâîëîâ â ñòðîêå
+// Ð·Ð°Ð´Ð°Ð½Ð¸Ðµ 3
+// valueRepeatSymbols - Ð¿Ð¾Ð»ÑƒÑ‡Ð¸Ñ‚ÑŒ ÐºÐ¾Ð»-Ð²Ð¾ Ð¿Ð¾Ð²Ñ‚Ð¾Ñ€ÑÑŽÑ‰Ð¸Ñ…ÑÑ ÑÐ¸Ð¼Ð²Ð¾Ð»Ð¾Ð²
 function valueRepeatSymbols(string $str): string
 {
-    $arrStr = str_split($str);                  // ïåðåâîä â ìàññèâ
-    sort($arrStr);                              // ñîðòèðîâêà
-    $sortStr = implode($arrStr);                // ïåðåâîä â ñòðîêó
-    preg_match_all('/(.)\1+/', $sortStr, $num); // çàïèñü â ìàññèâ ïîâòîðÿþùèõñÿ ñèìâîëîâ
-    $num = implode($num[0]);                    // ïåðåâîä â ñòðîêó
-    return strlen($num);                        // äëèííà ñòðîêè ïîâò-ñÿ ñèìâîëîâ  
+    $arrStr = str_split($str);                  // Ð¿ÐµÑ€ÐµÐ²Ð¾Ð´ Ð² Ð¼Ð°ÑÑÐ¸Ð²
+    sort($arrStr);                              // ÑÐ¾Ñ€Ñ‚Ð¸Ñ€Ð¾Ð²ÐºÐ°
+    $sortStr = implode($arrStr);                // Ð¿ÐµÑ€ÐµÐ²Ð¾Ð´ Ð² ÑÑ‚Ñ€Ð¾ÐºÑƒ
+    preg_match_all('/(.)\1+/', $sortStr, $num); // Ð´Ð¾Ð±Ð°Ð²Ð»ÐµÐ½Ð¸Ðµ Ð² Ð¼Ð°ÑÑÐ¸Ð² Ð¿Ð¾Ð²Ñ‚Ð¾Ñ€ÑÑŽÑ‰Ð¸Ñ…ÑÑ ÑÐ¸Ð¼Ð²Ð¾Ð»Ð¾Ð²
+    $num = implode($num[0]);                    // Ð¿ÐµÑ€ÐµÐ²Ð¾Ð´ Ð² ÑÑ‚Ñ€Ð¾ÐºÑƒ
+    return strlen($num);                        // Ð´Ð»Ð¸Ð½Ð½Ð° ÑÑ‚Ñ€Ð¾ÐºÐ¸  
 }
 
 
-//  çàäàíèÿ 4,5
-//  arraysMerge - äîáàâëÿåò ê ìàññèâó èç ôàéëà íåïóñòûå ýëåìåíòû ìàññèâà èç querystring
-//  addDATAtoFILE - äîáàâëåíèå â ôàéë ìàññèâà
-//  dataFromFILE - èçâëå÷åíèå èç ôàéëà ìàññèâà
-//  ifKEYinSTRINGcheckVALUE - ôîðìàò-èå 'First Name' > 'first_name'; ïîèñê êëþ÷à â querystring;
-//  åñëè îí íàéäåí è åãî çíà÷åíèå íå ïóñòîå, òî âîçâðàò íîâoãî çíà÷åíèÿ, èíà÷å ïóñòîãî
+//  Ð·Ð°Ð´Ð°Ð½Ð¸Ñ 4,5
+//  arraysMerge - Ð´Ð¾Ð±Ð°Ð²Ð»ÑÐµÑ‚ Ðº Ð¼Ð°ÑÑÐ¸Ð²Ñƒ Ð¸Ð· Ñ„Ð°Ð¹Ð»Ð° Ð½ÐµÐ¿ÑƒÑÑ‚Ñ‹Ðµ ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚Ñ‹ Ð¼Ð°ÑÑÐ¸Ð²Ð° Ð¸Ð· querystring
+//  addDATAtoFILE - ÑÐµÑ€Ð¸Ð°Ð»Ð¸Ð·ÑƒÐµÑ‚ Ð¼Ð°ÑÑÐ¸Ð², Ð´Ð¾Ð±Ð°Ð²Ð»ÑÐµÑ‚ Ð² Ñ„Ð°Ð¹Ð»
+//  dataFromFILE - Ð´Ð¾ÑÑ‚Ð°Ñ‘Ñ‚ Ð¼Ð°ÑÑÐ¸Ð² Ð¸Ð· Ñ„Ð°Ð¹Ð»Ð°, Ð°Ð½ÑÐµÑ€Ð¸Ð°Ð»Ð¸Ð·ÑƒÐµÑ‚
+//  ifKEYinSTRINGcheckVALUE - Ñ„Ð¾Ñ€Ð¼Ð°Ñ‚. ÐºÐ»ÑŽÑ‡ 'First Name' > 'first_name'; Ð¸Ñ‰ÐµÑ‚ ÐºÐ»ÑŽÑ‡ querystring;
+//  ÐµÑÐ»Ð¸ Ð½Ð°Ð¹Ð´ÐµÐ½, Ñ‚Ð¾ Ð²Ð¾Ð·Ð²Ñ€Ð°Ñ‰Ð°ÐµÑ‚ Ð·Ð½Ð°Ñ‡ÐµÐ½Ð¸Ðµ
 function arraysMerge(array $fromFILE, array $fromGETstring): array
 {
-    $deletNullGETstring = array_diff($fromGETstring, array(''));       // óäàëåíèå èç ìàññèâà ýëåìåíòîâ ñ ïóñòûì çíà÷åíèåì 
+    $deletNullGETstring = array_diff($fromGETstring, array(''));       // ÑƒÐ´Ð°Ð»ÑÐµÑ‚ ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚ Ñ Ð¿ÑƒÑÑ‚Ñ‹Ð¼Ð¸ Ð·Ð½Ð°Ñ‡ÐµÐ½Ð¸ÑÐ¼Ð¸ Ð¸Ð· Ð¼Ð°ÑÑÐ¸Ð²Ð°
     return $arrayResult = array_merge($fromFILE, $deletNullGETstring); 
      
 }
  
 function addDATAtoFILE(array $userData, string $fileAddres)
 {
-    $convertDATA = serialize($userData);    //  ñåðèàëèçàöèÿ ìàññèâà
+    $convertDATA = serialize($userData);    // ÑÐµÑ€Ð¸Ð°Ð»Ð¸Ð·Ð°Ñ†Ð¸Ñ 
     $fileFORdata = fopen($fileAddres, 'w');          
     fwrite($fileFORdata, $convertDATA);           
     fclose($fileFORdata);                       
@@ -43,7 +43,7 @@ function addDATAtoFILE(array $userData, string $fileAddres)
 function dataFromFILE(string $fileUserData): array
 {
     $fileContent = file_get_contents($fileUserData);                      
-    $fileContent = unserialize($fileContent);         // àíñåðèàëèçàöèÿ                      
+    $fileContent = unserialize($fileContent);         // Ð°Ð½ÑÐµÑ€Ð¸Ð°Ð»Ð¸Ð·Ð°Ñ†Ð¸Ñ                     
     return $fileContent;
 }
 
@@ -61,9 +61,8 @@ function ifKEYinSTRINGreturnVALUE(string $key): string
      }
 }
 
-
-//7
-// formatKEYS - ôîðìàòèðóåò êëþ÷è ìàññèâà, çàòåì ïåðåçàïèñûâàåò èõ â ìàññèâ
+// Ð·Ð°Ð´Ð°Ð½Ð¸Ðµ 7
+// formatKEYS - Ñ„Ð¾Ñ€Ð¼Ð°Ñ‚Ð¸Ñ€ÑƒÐµÑ‚ Ð²ÑÐµ ÐºÐ»ÑŽÑ‡Ð¸ Ð¼Ð°ÑÑÐ¸Ð²Ð° 'first_name' > 'First Name:'
 function formatKEYS(&$data)
 {
     foreach ($data as $key => $value)
