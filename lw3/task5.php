@@ -10,11 +10,11 @@ if ($_GET['email'] != null)
         $fileAddres = 'D:\aStudy\PHP\lw3\data/'.$mailValue.'.txt'; //адрес проверяемого файла
         if (file_exists($fileAddres))                           
         {
-            $fileContent = dataFromFILE($fileAddres);              //достаёт массив из файла
+            $fileContent = dataFromFile($fileAddres);              //достаёт массив из файла
             header("Content-Type: text/plain");
             foreach ($fileContent as $key => $value)       
             {
-                print $key.' '.$value.PHP_EOL;                     //печать
+                print $key . ' ' . $value . PHP_EOL;                     //печать
             }        
         }
     }

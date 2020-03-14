@@ -1,23 +1,21 @@
 <?php
-
-include 'D:\aStudy\PHP\lw3\functions.php';
-
-if (ifKEYinSTRINGreturnVALUE('email') != null)                                         
+include 'functions.php';
+if (ifKeyInStringReturnValue('email') != null)                                         
 {    
     $str = $_SERVER['QUERY_STRING'];
     parse_str($str, $stringUserData);                                 //запарсить querystring в массив
-    formatKEYS($stringUserData);
+    formatedKeys($stringUserData);
     $toFileData = $stringUserData;
 
-    $valueMail = ifKEYinSTRINGreturnVALUE('email');
+    $valueMail = ifKeyInStringReturnValue('email');
     $fileAddres = 'D:\aStudy\PHP\lw3\data/'.$valueMail.'.txt';
                                                
     if (file_exists($fileAddres))                                     // проверить наличие файла
     {        
-        $fileUserData = dataFromFILE($fileAddres);
+        $fileUserData = dataFromFile($fileAddres);
         $toFileData = array_merge($fileUserData, $stringUserData);       
     }
 
-    addDATAtoFILE($toFileData, $fileAddres);
+    addDataToFile($toFileData, $fileAddres);
     print_r($toFileData);
 }

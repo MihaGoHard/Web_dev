@@ -1,10 +1,9 @@
 <?php                                                      	
-
-include 'D:\aStudy\PHP\lw3\functions.php';
-
-if ($_GET['password'] != null)                           
+header("Content-Type: text/plain");
+include 'functions.php';
+$parol = getGETParameter('password');
+if ($parol)                           
 {
-    $parol = getGETParameter('password');
     $onlyNumLetters = 0;
     $repeats = 0;
     $parolLength = strlen($parol);
@@ -18,7 +17,7 @@ if ($_GET['password'] != null)
         $onlyNumLetters = $parolLength;                    // если буквы в одном регистре
     }  
     $repeats = valueRepeatSymbols($parol);                 // кол-во повторяющихся символов
-    $rel = 0 + 4*$parolLength + 4*$countNumbers + 2*$countBigLetters + 2*$countSmallLetters - $onlyNumLetters - $repeats;
-    header("Content-Type: text/plain");
-    print 'reliability of parol = '. $rel;
+    $rel = 0 + (4 * $parolLength) + (4 * $countNumbers) + (2 * $countBigLetters) + (2 * $countSmallLetters) - $onlyNumLetters - $repeats;
+    
+    print 'reliability of parol = ' . $rel;
 }
