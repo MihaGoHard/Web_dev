@@ -12,7 +12,7 @@ if ($password)
     $countSmallLetters = preg_match_all('/[a-z]/', $password);// колв-во маленьких букв
     $onlyLetters = preg_match_all('/^[a-zA-Z]+$/', $password);// если все буквы - 1
     $onlyNumbers = preg_match_all('/^[0-9]+$/', $password);   // если все цифры - 1
-    if (($onlyLetters === 1) or ($onlyNumbers === 1))
+    if (($onlyLetters === 1) || ($onlyNumbers === 1))
     {
         $onlyNumLetters = $passwordLength;                    // если буквы в одном регистре
     }  
