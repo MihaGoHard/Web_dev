@@ -7,8 +7,8 @@ function getGETParameter(string $ident): ?string
 }
 
 // задание 3
-// valueRepeatSymbols - получить кол-во повторяющихся символов
-function valueRepeatSymbols(string $str): string
+// getRepeatsCount - получить кол-во повторяющихся символов
+function getRepeatsCount(string $str): string
 {
     $arrStr = str_split($str);                  // перевод в массив
     sort($arrStr);                              // сортировка
@@ -25,7 +25,7 @@ function valueRepeatSymbols(string $str): string
 //  dataFromFILE - достаёт массив из файла, ансериализует
 //  ifKEYinSTRINGcheckVALUE - формат. ключ 'First Name' > 'first_name'; ищет ключ querystring;
 //  если найден, то возвращает значение
-function arraysMerge(array $fromFile, array $fromGetString): array
+function joinArrays(array $fromFile, array $fromGetString): array
 {
     $deletNullGetString = array_diff($fromGetString, array(''));       // удаляет элемент с пустыми значениями из массива
     return $arrayResult = array_merge($fromFile, $deletNullGetString); 
@@ -40,14 +40,14 @@ function addDataToFile(array $userData, string $fileAddres)
     fclose($fileForData);                       
 }
                                                         
-function dataFromFile(string $fileUserData): array
+function getDataFromFile(string $fileUserData): array
 {
     $fileContent = file_get_contents($fileUserData);                      
     $fileContent = unserialize($fileContent);         // ансериализация                     
     return $fileContent;
 }
 
-function ifKeyInStringReturnValue(string $key): string       
+function giveKeyGetValue(string $key): string       
 {    
      $formatedKey = str_replace(' ', '_', strtolower($key)); // 'First Name' => 'first_name' 
      $searchKey = $_GET[$formatedKey];                                                        
@@ -55,7 +55,6 @@ function ifKeyInStringReturnValue(string $key): string
      {
          return isset($searchKey) ? (string)$searchKey: null;                   
      }
-
      return $emptyValue = '';
 
 }

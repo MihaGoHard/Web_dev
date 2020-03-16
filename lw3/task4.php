@@ -1,17 +1,17 @@
 <?php
 include 'functions.php';
-if (ifKeyInStringReturnValue('email') != null)                                         
+if (giveKeyGetValue('email') != null)                                         
 {                          
     $keys = ['First Name', 'Last Name', 'Email', 'Age'];          // параметры
     $keysNumber = count($keys);
-    $valueMail = ifKeyInStringReturnValue('email');
+    $valueMail = giveKeyGetValue('email');
 
     $stringUserData = [];
     $value = '';
 
     for ($i = 0; $i < $keysNumber; $i++)
     {
-         $value = ifKeyInStringReturnValue($keys[$i]);                
+         $value = giveKeyGetValue($keys[$i]);                
          $stringUserData += [$keys[$i] . ':' => $value];                    // составить массив ключ => значение из query string
     }        
 
@@ -20,8 +20,8 @@ if (ifKeyInStringReturnValue('email') != null)
            
     if (file_exists($fileAddres))                                     // проверка существования такого файла
     {
-        $fileUserData = dataFromFile($fileAddres);
-        $toFileData = arraysMerge($fileUserData, $stringUserData);  // обновление файла данными из query string       
+        $fileUserData = getDataFromFile($fileAddres);
+        $toFileData = joinArrays($fileUserData, $stringUserData);  // обновление файла данными из query string       
     }
 
     addDataToFile($toFileData, $fileAddres);
