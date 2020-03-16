@@ -20,11 +20,11 @@ function getRepeatsCount(string $str): string
 
 
 //  задания 4,5
-//  arraysMerge - добавляет к массиву из файла непустые элементы массива из querystring
-//  addDATAtoFILE - сериализует массив, добавляет в файл
-//  dataFromFILE - достаёт массив из файла, ансериализует
-//  ifKEYinSTRINGcheckVALUE - формат. ключ 'First Name' > 'first_name'; ищет ключ querystring;
-//  если найден, то возвращает значение
+//  joinArrays - добавляет к массиву из файла непустые элементы массива из querystring
+//  addDATAtoFile - сериализует массив, добавляет в файл
+//  getDataFromFile - достаёт массив из файла, ансериализует
+//  giveKeyGetValue - формат. ключ 'First Name' > 'first_name'; ищет ключ querystring;
+
 function joinArrays(array $fromFile, array $fromGetString): array
 {
     $deletNullGetString = array_diff($fromGetString, array(''));       // удаляет элемент с пустыми значениями из массива
