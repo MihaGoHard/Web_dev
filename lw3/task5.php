@@ -1,10 +1,11 @@
 <?php
+
 header("Content-Type: text/plain");
 include 'functions.php';
 $mailValue = getGETParameter('email');
 if ($mailValue)
-{              
-    $fileAddres = 'D:\aStudy\PHP\lw3\data/'.$mailValue.'.txt'; //адрес проверяемого файла
+{                                                                                                       
+    $fileAddres = "data/" . $mailValue . ".txt";                    //адрес проверяемого файла
     if (file_exists($fileAddres))                           
     {
         $fileContent = getDataFromFile($fileAddres);              //достаёт массив из файла
@@ -13,5 +14,4 @@ if ($mailValue)
             print $key . ' ' . $value . PHP_EOL;               //печать
         }        
     }
-
 }

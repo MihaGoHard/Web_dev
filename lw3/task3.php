@@ -1,6 +1,15 @@
 <?php                                                      	
 header("Content-Type: text/plain");
 include 'functions.php';
+
+function addDataToFile(array $userData, string $fileAddres)
+{
+    $convertData = serialize($userData);    // сериализация 
+    $fileForData = fopen($fileAddres, 'w');          
+    fwrite($fileForData, $convertData);           
+    fclose($fileForData);                       
+}
+
 $password = getGETParameter('password');
 if ($password)                           
 {
