@@ -15,23 +15,21 @@ function addDataToFile(array $userData, string $fileAddres)
     fclose($fileForData);                       
 }
 
-$valueMail = getGETParameter('email');
-if ($valueMail)                                         
+$email = getGETParameter('email');
+if ($email)                                         
 {                          
     $keys = ['First Name', 'Last Name', 'Email', 'Age'];               // параметры
-    $keysNumber = count($keys);
     $stringUserData = [];
-    $value = '';
 
-    for ($i = 0; $i < $keysNumber; $i++)
+    foreach ($keys as $key => $value)
     {
-        $formatKey = str_replace(' ', '_', strtolower($keys[$i]));
+        $formatKey = str_replace(' ', '_', strtolower($keys[$key]));
         $value = getGETParameter($formatKey);                
-        $stringUserData += [$keys[$i] . ':' => $value];                 // составить массив ключ => значение из query string
+        $stringUserData += [$keys[$key] . ':' => $value];                 // составить массив ключ => значение из query string
     }        
 
     $toFileData = $stringUserData;
-    $fileAddres = "data/" . $valueMail . ".txt";   
+    $fileAddres = "data/" . $email . ".txt";   
            
     if (file_exists($fileAddres))                                      // проверка существования такого файла
     {
