@@ -1,0 +1,19 @@
+.main
+{
+    display: flex;
+    flex-basis: auto;
+    flex-direction: column;  
+}
+
+
+
+.content-block
+{
+    display: flex;
+    flex-basis: auto;
+    flex-flow:  row wrap;
+    margin: 97px auto ;
+    max-width: 940px;
+    filter: brightness(100%);
+}
+
