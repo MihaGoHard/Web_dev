@@ -1,0 +1,134 @@
+.forms-head
+{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 40px;
+  justify-content: space-between;
+  margin-left: 28px;
+  width: 700px;
+}
+
+.forms-img
+{
+  display: block;
+  margin-top: 2px;
+  width: 200px;
+  height: 1px;
+}
+
+.forms-head-text
+{
+  display: block;
+  width: 257px;
+  height: 40px;
+  margin-left: 15px;
+  font: 300 36px/42px Open Sans;
+  color: #333333;
+}
+.form-window
+{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 70px 0 0 114.5px;
+  width: 540px;
+  height: 85px;
+}
+.form-window_email
+{
+  margin-top: 24px;
+}
+.form-window_country
+{
+  margin-top: 25px;
+}
+
+.form-feel
+{
+  display: block;
+  margin: 3px 0 0 1px;
+  padding: 12px;
+  padding-left: 19px;
+  width: 505px;
+  border-radius: 3px;
+  border: 2px solid #c9c9c9;
+  font-size: 19px;
+  outline: unset;
+}
+.form-feel:active,
+.form-feel:focus
+{
+
+  border-color: #21d1ae;
+}
+
+.form-feel_select
+{
+  width: 540px;
+  margin-top: 4px;
+  font-size: 18px;
+  padding: 6px 7px 8px 16px;
+  line-height: 32px;
+  color: #555555;
+  font-family: "Open Sans";
+  font-weight: 400;    
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: url("../img/arrow_down.png") no-repeat;
+  background-position-x: 498px;
+  background-position-y: 18px;
+}
+
+.form-feel_textarea
+{
+  overflow: auto;
+  height: 122px;
+  resize: none; 
+}
+
+.form-name
+{
+  font: 400 20px/32px Open Sans;
+  color: #333333;
+}
+.form-name_marker
+{
+  color: red;
+}
+
+.radio-name
+{
+  display: block;
+  font: 400 20px/32px Open Sans;
+  color: #333333;
+}
+.radio
+{
+  width: 540px;
+  height: 80px;
+  margin: 42px 0 0 115px;
+}
+
+.radio-choice
+{
+  display: block;
+  margin: 5px 4px 0 -4px;
+  width: 140px;
+  height: 30px;
+  float: left;
+  font: 400 18px/32px Open Sans;
+  color: #333333;
+}
+
+.text-area
+{
+  width: 572px;
+  height: 200px;
+  margin: 24px 0 0 114.5px ;
+}
+
+
+
+
