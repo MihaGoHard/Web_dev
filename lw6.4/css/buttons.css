@@ -1,0 +1,42 @@
+.button
+{
+    display: block;
+    width: 140px;
+    height: 50px;
+    text-decoration: none;
+    text-align: center;
+    text-indent: 26px;
+    font: 19px Georgia; 
+    line-height: 51px;
+    color: #333333;
+    background: rgba(0, 0, 0, 0) url("../img/about_me_icon2.png") no-repeat;
+    background-position-x: 20px;
+    background-position-y: 17px;
+}
+.button:hover,
+.button:focus
+{
+    color: aliceblue;
+    background-image: url("../img/about_me_icon.png");
+    background-color: #15a98c;
+}
+
+
+.button_email
+{
+    margin: 100px 0 0 250px;
+    text-indent: unset;
+    line-height: 40px;
+    width: 220px;
+    height: 50px;
+    border-radius: 5px;
+    background-image: none;
+    border: none;
+}
+.button_email:hover,
+.button_email:focus
+{
+  background-color: #15a98c; 
+  background-image: none;
+}
+
