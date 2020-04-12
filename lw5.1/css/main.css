@@ -2,10 +2,9 @@
 {
     display: flex;
     flex-basis: auto;
-    flex-direction: column;  
+    flex-direction: column; 
+    justify-content: space-between; 
 }
-
-
 
 .content-block
 {
@@ -13,7 +12,7 @@
     flex-basis: auto;
     flex-flow:  row wrap;
     margin: 97px auto ;
-    max-width: 940px;
+    width: 1000px;
     filter: brightness(100%);
 }
 
