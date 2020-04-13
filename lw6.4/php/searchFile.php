@@ -3,7 +3,7 @@
   $email = getPOSTParameter('email');
   if ($email)
   {                                                                                                       
-      $fileAddres = "C:/DEV/OSPanel/domains/lab6/php/data/" . $email . ".txt" ;                    //адрес проверяемого файла
+      $fileAddres = "../lw6.2.3/php/data/" . $email . ".txt" ;                    //данные берутся из файла(data) предыдущего задания
       if (file_exists($fileAddres))                           
       {
           $fileContent = getDataFromFile($fileAddres);              //достаёт массив из файла

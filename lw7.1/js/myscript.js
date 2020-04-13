@@ -1,38 +1,27 @@
 function isPrimeNumber(n){
-  if ( (Number.isInteger(n) === false ) && ( Array.isArray(n) === false) ) {  
+  if ((!Number.isInteger(n) && !Array.isArray(n)) || (Array.isArray(n) && !checkNum(n)))  {  
     console.log('mistace')
-  }
-
-  if ( (Array.isArray(n) === true ) && ( checkNum(n) === false) ) {
-    console.log('mistace') 
   }    
-
-  if ( (Array.isArray(n) === true ) && ( checkNum(n) === true) ) { 
+  if (Array.isArray(n) && checkNum(n)) { 
     n.forEach(element => isPrime(element))
-  }    
-                
-  if ( Number.isInteger(n) === true ) {
+  }                    
+  if (Number.isInteger(n)) {
     isPrime(n) 
   } 
-
 }
 
 function checkNum(n){
-  let fl
-  n.forEach( function(entry) {
-    if ( Number.isInteger(entry) === false ){
-      fl = 1; 
+  let fl = true
+  for (let entry of n) {
+    if (!Number.isInteger(entry)) {
+      fl = false
     }
-  });
-  if (fl === 1){
-        return false
-    } else {
-        return true
-    }
+  }
+  return !fl ? false : true 
 }    
 
 function isPrime(n){
-  let isPrime
+  let isPrime = true
   for (let i = 2; i <= n; i++){
     isPrime = true
     for (let j = 2; j < i; j++) {
@@ -41,13 +30,11 @@ function isPrime(n){
         break
       }
     }
-    if ( (isPrime) && (i === n) ) {
+    if ((isPrime) && (i == n)) {
       console.log(i + ' is prime number')
     }          
   }
-  if (isPrime === false) {
+  if (!isPrime || (n == 1)) {
     console.log(n + ' is not prime number')
   }
 }
-
-isPrimeNumber(3)
