@@ -2,10 +2,8 @@ function calc(n){
   let regular = /([(])?(\+|\-|\*|\/)(\s+)?(\-)?(\d+)(((\.)(\d+))?)(\s+)(\-)?(\d+)(((\.)(\d+))?)([)])?/
   if((n == null) || (typeof(n) != "string") || (n.match(regular) == null)) {
     return 'invalid input'  
-  } 
-  if (n.match(/(\d+)(((\.)(\d+))?)/g).length - n.match(/(\+|\-|\*|\/)(?=\D)/g).length != 1){
-    return 'invalid input'
   }
+      
   let searched = n.match(regular)
   let secondOper = Number((searched[11] != null ? searched[11] : '') + searched[12] + searched[13]) 
   let firstOper = Number((searched[4] != null ? searched[4] : '') + searched[5] + searched[6])
