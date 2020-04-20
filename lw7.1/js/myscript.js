@@ -22,11 +22,6 @@ function isPrime(n) {
         break;
       }
     }
-    if (isPrime) {
-      console.log(n + ' is prime number');
-    }          
-    if (!isPrime) {
-      console.log(n + ' is not prime number');
-    }
+    isPrime ? console.log(n + ' is prime number') : console.log(n + ' is not prime number'); 
   }
 }
