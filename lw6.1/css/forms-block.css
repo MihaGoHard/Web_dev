@@ -1,37 +1,40 @@
-.forms-head
-{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    height: 40px;
-    justify-content: space-between;
-    margin-left: 28px;
-    width: 700px;
-}
-
-.forms-img
-{
-    display: block;
-    margin-top: 2px;
-    width: 200px;
-    height: 1px;
-}
-
 .forms-head-text
 {
     display: block;
+    text-indent: -1px;
     width: 257px;
     height: 40px;
-    margin-left: 15px;
-    font: 300 36px/42px Open Sans;
+    margin: 0 auto;
+    font: 300 36px/42px "Open Sans";
     color: #333333;
 }
+.forms-head-text::before
+{
+    display: block;
+    position: absolute;
+    margin: 21px 0 0 -228px;
+    content: "";
+    width: 200px;
+    height: 1px;
+    background: url("../img/line-left.png") no-repeat;
+}
+.forms-head-text::after
+{
+    display: block;
+    position: absolute;
+    margin: -21px 0 0 270px;
+    content: "";
+    width: 200px;
+    height: 1px;
+    background: url("../img/line-right.png") no-repeat;
+}
+
 .form-window
 {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    margin: 70px 0 0 114.5px;
+    margin: 70px 0 0 103px;
     width: 540px;
     height: 85px;
 }
@@ -59,19 +62,16 @@
 .form-feel:active,
 .form-feel:focus
 {
-   border-color: #21d1ae;
+    border-color: #21d1ae;
 }
 
 .form-feel_select
 {
     width: 540px;
     margin-top: 4px;
-    font-size: 18px;
     padding: 6px 7px 8px 16px;
-    line-height: 32px;
-    color: #555555;
-    font-family: "Open Sans";
-    font-weight: 400;    
+    font: 400 18px/32px "Open Sans"; 
+    color: #555555;    
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
@@ -89,35 +89,41 @@
 
 .form-name
 {
-    font: 400 20px/32px Open Sans;
+    font: 400 20px/32px "Open Sans";
     color: #333333;
 }
-.form-name_marker
+.form-name-marked
 {
+    font: 400 20px/32px "Open Sans";
+    color: #333333;
+}
+.form-name-marked::after
+{
+    content: " *";
     color: red;
 }
 
-.radio-name
+.gender-name
 {
     display: block;
     font: 400 20px/32px Open Sans;
     color: #333333;
 }
-.radio
+.gender
 {
     width: 540px;
     height: 80px;
-    margin: 42px 0 0 115px;
+    margin: 42px 0 0 103px;
 }
 
-.radio-choice
+.gender-choice
 {
     display: block;
     margin: 5px 4px 0 -4px;
     width: 140px;
     height: 30px;
     float: left;
-    font: 400 18px/32px Open Sans;
+    font: 400 18px/32px "Open Sans";
     color: #333333;
 }
 
@@ -125,7 +131,7 @@
 {
     width: 572px;
     height: 200px;
-    margin: 24px 0 0 114.5px ;
+    margin: 24px 0 0 103px ;
 }
 
 

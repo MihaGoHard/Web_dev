@@ -6,48 +6,45 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&display=swap&subset=cyrillic" rel="stylesheet">
     <link rel="stylesheet" href="css/films-block.css">
     <link rel="stylesheet" href="css/content-block.css">
+    <link rel="stylesheet" href="css/top-content.css">
     <link rel="stylesheet" href="css/buttons.css">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/forms-block.css">
   </head>
-  <body style="margin: 0">
+  <body>
     <div class="main">
       <div class="top-navigation">
         <a class="button" href="#about">
           Обо мне
         </a>      
-
         <a class="button button_hobby" href="#hobby">
           Мое хобби
         </a>
-
         <a class="button button_video" href="#video">
           Любимые фильмы
         </a>
-
         <div class="empty"></div>
       </div>
 
-      <div class="main-background">        
+      <div class="top-content">
+        <div class="photo-blockquote">
+          <img class="main-photo" alt="cot propal(" src="img/mainPhoto2.jpg">
+          <div class="blockquote-block">
+            <span class="blockquote-text">
+              Мы берем на себя много, потому что мало чего боимся
+            </span>
+            <span class="blockquote-author">
+              — Том Демарко. Deadline
+            </span>  
+          </div>
+        </div>
       </div>
 
-      <div class="content-block">
-        <img class="main-photo" alt="vse propalo" src="img/mainPhoto2.jpg">
-
-        <div class="citata-block">
-          <blockquote class="citata-text">
-            Мы берем на себя много, потому что мало чего боимся
-          </blockquote>
-
-          <blockquote class="citata-avtor">
-            — Том Демарко. Deadline
-          </blockquote>  
-        </div>
-
-        <div class="lists-block" id="about">
-          <div class="list-head">
+      <div class="content-block">  
+        <div class="lists-block">
+          <span class="list-head">
             Любимые писатели:
-          </div>
+          </span>
           <ul class="list">
             <li class="list-element">Aйзек Азимов</li>
             <li class="list-element">Говард Лавкрафт</li>
@@ -55,9 +52,9 @@
             <li class="list-element">Чак Паланик</li>
           </ul>
 
-          <div class="list-head list-head_films">
+          <span class="list-head list-head_films">
             Любимые фильмы:
-          </div>
+          </span>
           <ol class="list list_films">
             <li class="list-element list-element_films-trumen">Шоу Трумэна</li>
             <li class="list-element list-element_films">Малхолланд Драйв</li>
@@ -66,15 +63,15 @@
           </ol>
         </div>
 
-        <div class="inform-block">  
-          <h1 class="inform-block-head-jane">Jane Doe</h1>
+        <div class="inform-block">
+          <h1 class="inform-block-first-head" id="about">Jane Doe</h1>  
           <p class="inform-block-text">
             В 1930-е годы прошлого века физик Джордж Гамоу из университета штата Колорадо начал
             публиковать <br> мини-сериал рассказов о неком мистере Томпкинсе, банковском клерке средних лет.
             Мистер Томпкинс, как явствовало из этих историй, интересовался современной наукой. 
           </p>
 
-          <h2 class="inform-block-head-hobby" id="hobby">Мое хобби</h2>
+          <h2 class="inform-block-second-head" id="hobby">Мое хобби</h2>
           <p class="inform-block-text inform-block-text_hobby">
             Он регулярно посещал вечерние лекции местного профессора и, разумеется, всегда засыпал
             на самом интересном месте.<br> А когда просыпался, то обнаруживал себя в каком-нибудь параллельном
@@ -92,16 +89,16 @@
         </div>
       </div> 
 
-      <div class="films-background"> 
+      <div class="films-background">  
         <div class="films-block">
           <h3 class="film-header" id="video">Любимые фильмы</h3>
 
           <div class="films-articles-block">
             <div class="film-column">
-              <img alt="PoteryaPoter=("src="img/film1.png" class="image">
-              <div class="film-name">
+              <img alt="PoteryaPoter=(" src="img/film1.png" class="image">
+              <span class="film-name">
                 Побег из Шоушенка
-              </div>
+              </span>
               <p class="film-text">
                 Успешный банкир Энди Дюфрейн обвинен в убийстве собственной жены и ее любовника. 
                 Оказавшись в тюрьме под названием Шоушенк, он сталкивается с жестокостью и беззаконием,
@@ -112,10 +109,10 @@
             </div>
 
             <div class="film-column">
-              <img alt="PoteryaPoter=("src="img/film2.png" class="image">
-              <div class="film-name">
+              <img alt="PoteryaPoter=(" src="img/film2.png" class="image">
+              <span class="film-name">
                 Наркоз
-              </div>
+              </span>
               <p class="film-text">
                 Клай Бересфорд вынужден лечь под нож. Однако в процессе операции на сердце он неожиданно
                 приходит в себя. Находясь в парализованном состоянии, будучи не в силах пошевелить ни рукой,
@@ -124,10 +121,10 @@
             </div>
 
             <div class="film-column">
-              <img alt="PoteryaPoter=("src="img/film3.png" class="image">
-              <div class="film-name film-name_astral">
+              <img alt="PoteryaPoter=(" src="img/film3.png" class="image">
+              <span class="film-name film-name_astral">
                 Астрал
-              </div>
+              </span>
               <p class="film-text">
                 Джош и Рене переезжают со своими детьми в новый дом, но не успевают толком распаковать вещи,
                 как начинаются странные события. Необъяснимо перемещаются предметы, в детской звучат 
@@ -137,10 +134,10 @@
             </div>
 
             <div class="film-column">
-              <img alt="PoteryaPoter=("src="img/film4.png" class="image">
-              <div class="film-name">
+              <img alt="PoteryaPoter=(" src="img/film4.png" class="image">
+              <span class="film-name">
                 Гравитация
-              </div>
+              </span>
               <p class="film-text">
                 Доктор Райан Стоун, блестящий специалист в области медицинского инжиниринга, отправляется в свою 
                 первую космическую миссию под командованием ветерана астронавтики Мэтта Ковальски, для которого 
@@ -154,38 +151,26 @@
 
           <a class="button button_films" href="#">
             Все фильмы
-          </a>        
-        </div>
-      </div>
+          </a>
+        </div>          
+      </div>  
 
       <div class="forms-block">
-        <div class="forms-head">
-          <img alt="netu"src="img/line-left.png" class="forms-img">
+        <form action="" method="GET">
           <h4 class="forms-head-text">НАПИШИ МНЕ</h4>
-          <img alt="netu"src="img/line-right.png" class="forms-img">
-        </div>
 
-        <FORM action="" method="GET">
           <div class="form-window">
-            <span class="form-name">
-              Ваше имя
-              <span class="form-name form-name_marker">*</span>
-            </span> 
-            <INPUT class="form-feel" type="text" name="first_name" value="" autocomplete="off" /> <br />
+            <span class="form-name-marked">Ваше имя</span>
+            <input class="form-feel" type="text" name="first_name" value="" autocomplete="off" /> <br />
           </div>
 
           <div class="form-window form-window_email">
-            <span class="form-name">
-              Ваш email
-              <span class="form-name form-name_marker">*</span>
-            </span> 
+            <span class="form-name-marked">Ваш email</span> 
             <input class="form-feel" type="text" name="email" value="" autocomplete="off" /> <br />
           </div>
 
           <div class="form-window form-window_country">
-            <span class="form-name">
-              Откуда вы?
-            </span> 
+            <span class="form-name">Откуда вы?</span> 
             <select class="form-feel form-feel_select" type="text" name="country" autocomplete="off">
               <option>Россия</option>
               <option>Урюпинск</option>
@@ -193,30 +178,25 @@
  
           </div>
            
-          <div class="radio">
-              <span class="radio-name">Ваш пол</span>
-
-              <div class="radio-choice">
-                <INPUT type="radio" name="Radbut" id="men" value="МУЖСКОЙ" checked />
-                <label for="men">
-                  <span>Мужской</span>
-                </label>
-              </div>
-
-              <div class="radio-choice">
-                <INPUT type="radio" name="Radbut" id="women" value="ЖЕНСКИЙ" />
-                <label for="women">
-                  <span>Женский</span>
-                </label>
-              </div> 
+          <div class="gender">
+            <span class="gender-name">Ваш пол</span>
+            <div class="gender-choice">
+              <input type="radio" name="Radbut" id="men" value="МУЖСКОЙ" checked />
+              <label for="men">
+                <span>Мужской</span>
+              </label>
+            </div>
+            <div class="gender-choice">
+              <input type="radio" name="Radbut" id="women" value="ЖЕНСКИЙ" />
+              <label for="women">
+                <span>Женский</span>
+              </label>
+            </div> 
           </div>
           
           <div class="text-area">
-            <span class="form-name">
-              Ваше сообщение
-              <span class="form-name form-name_marker">*</span>
-            </span> 
-            <textarea class="form-feel form-feel_textarea" type="text" name="massege" value="" autocomplete="off" ></textarea>
+            <span class="form-name-marked">Ваше сообщение</span> 
+            <textarea class="form-feel form-feel_textarea" type="text" name="massege" value="" autocomplete="off"></textarea>
           </div>
 
           <div>
@@ -224,14 +204,12 @@
               Отправить
             </button>  
           </div>
-        </FORM>
+        </form>
       </div>
 
       <div class="footer">
-        <p class="footer-text">
           © 2006-2018 Поволжский государственный технологический университет, ФГБОУ ВО «ПГТУ»
-        </p>  
-       </div>  
+      </div>  
     </div>
   </body>    
 </html>
