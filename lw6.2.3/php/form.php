@@ -1,8 +1,8 @@
 <?php
 $place = '<div class="form-window form-window_country">
-            <span class="form-name">Откуда вы</span>
+            <span class="form-name">Откуда вы?</span>
             <select class="form-feel form-feel_select"  type="text" name="country" value="" autocomplete="off">';
-$countries = ['Россия', 'Урюпинск', 'Кукуево', 'Спрингфилд', 'Чупакабра'];
+$countries = ['Россия', 'Урюпинск', 'Кукуево', 'Спрингфилд', 'Чупакабра', 'Киргизия'];
 foreach($countries as $key)
 {
     $place = $place . "<option>" . $key . "</option><br>"; 
@@ -10,9 +10,9 @@ foreach($countries as $key)
 $place = $place . '<select>
                    </div>';
 
-$gend = '<div class="radio">
-            <span class="radio-name">Ваш пол</span>';
-$radioPoint = ["men" => "МУЖСКОЙ" , "women" => "ЖЕНСКИЙ"];
+$gend = '<div class="gender">
+            <span class="gender-name">Ваш пол</span>';
+$radioPoint = ["men" => "Мужской" , "women" => "Женский"];
 foreach($radioPoint as $key => $value)
 {
     $checked = '';
@@ -20,7 +20,7 @@ foreach($radioPoint as $key => $value)
     {
         $checked = "checked";
     }
-    $gend = $gend  . '<div class="radio-choice">
+    $gend = $gend  . '<div class="gender-choice">
                       <input type="radio" name="gender" id=" ' . $key . ' " value=" ' . $value . ' " ' . $checked . '/>
                       <label for=" ' . $key .  ' ">
                         <span> ' . $value . ' </span>
@@ -46,7 +46,7 @@ $fields = [
     ],
     "email" => [
         "div-class" => "form-window form-window_email",     
-        "placeholder" => "Email",
+        "placeholder" => "Ваш email",
         "teg" => "input",
         "input-class" => "form-feel",
         "value" => "",
