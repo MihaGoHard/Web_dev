@@ -1,8 +1,8 @@
 function isPrimeNumber(n) {
   if (Number.isInteger(n)) {
-    isPrime(n);                        // return?
+    isPrime(n);                      
   } else if (Array.isArray(n)) {
-    (n.length == 0) ? console.log('empty array') :   // можно ли переносить длинные тернарные операторы на другую строку?
+    (n.length == 0) ? console.log('empty array') :   
     n.forEach(element => Number.isInteger(element) ? isPrime(element) : 
       typeof(element) == 'string' ? console.log(element + ' is ' + typeof(element)) : 
       console.log(typeof(element))); 
