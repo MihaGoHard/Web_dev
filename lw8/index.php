@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>AnDzanDzan</title>
     <script src="/js/video.js"></script> 
-    <script src="./js/cicleV2.js" defer></script> 
+    <script src="./js/cicle.js" defer></script> 
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&display=swap&subset=cyrillic" rel="stylesheet">
     <link rel="stylesheet" href="css/films-block.css">
     <link rel="stylesheet" href="css/content-block.css">
