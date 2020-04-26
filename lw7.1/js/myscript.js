@@ -1,18 +1,26 @@
 function isPrimeNumber(n) {
   if (Number.isInteger(n)) {
-    isPrime(n);                      
+    isPrime(n);                        // return?
   } else if (Array.isArray(n)) {
-    (n.length == 0) ? console.log('empty array') :   
-    n.forEach(element => Number.isInteger(element) ? isPrime(element) : 
-      typeof(element) == 'string' ? console.log(element + ' is ' + typeof(element)) : 
-      console.log(typeof(element))); 
-  } else {
+           (n.length == 0) ? console.log('empty array') : n.forEach(element => checkElement(element));
+         }
+  else {
     console.log('wrong input');
   }
 }
 
+function checkElement(n) {
+  if (Number.isInteger(n)) {
+    isPrime(n)
+  } else if (typeof(n) == 'string') {
+           console.log(n + ' is ' + typeof(n))
+         } else {
+           console.log(typeof(n))
+         }
+}
+
 function isPrime(n) {
-  if (n == 1 || n == 0) {
+  if (n == 1 || n <= 0 ) {
     console.log(n + ' is not prime number');
   } else {
     let isPrime = true;  
@@ -25,3 +33,4 @@ function isPrime(n) {
     isPrime ? console.log(n + ' is prime number') : console.log(n + ' is not prime number'); 
   }
 }
+
