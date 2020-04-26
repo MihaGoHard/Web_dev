@@ -1,6 +1,6 @@
 function isPrimeNumber(n) {
   if (Number.isInteger(n)) {
-    isPrime(n);                        // return?
+    isPrime(n);                        
   } else if (Array.isArray(n)) {
     (n.length == 0) ? console.log('empty array') : n.forEach(element => checkElement(element));
   } else {
