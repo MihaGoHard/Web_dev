@@ -2,9 +2,8 @@ function isPrimeNumber(n) {
   if (Number.isInteger(n)) {
     isPrime(n);                        // return?
   } else if (Array.isArray(n)) {
-           (n.length == 0) ? console.log('empty array') : n.forEach(element => checkElement(element));
-         }
-  else {
+    (n.length == 0) ? console.log('empty array') : n.forEach(element => checkElement(element));
+  } else {
     console.log('wrong input');
   }
 }
@@ -13,10 +12,10 @@ function checkElement(n) {
   if (Number.isInteger(n)) {
     isPrime(n)
   } else if (typeof(n) == 'string') {
-           console.log(n + ' is ' + typeof(n))
-         } else {
-           console.log(typeof(n))
-         }
+    console.log(n + ' is ' + typeof(n))
+  } else {
+    console.log(typeof(n))
+  }
 }
 
 function isPrime(n) {
