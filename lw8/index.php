@@ -92,7 +92,7 @@
       </div> 
 
       <div class="films-background">
-        <button class="press-me" type="button" onclick="moveLeft()"></button>  
+        <button class="move_left" type="button"></button>  
         <div class="films-block">
           <h3 class="film-header" id="video">Любимые фильмы</h3>
 
@@ -156,7 +156,7 @@
             Все фильмы
           </a>
         </div>    
-        <button class="press-me press-me_right" type="button" onclick="moveRight()"></button>      
+        <button class="move_right" type="button"></button>      
       </div>  
       <div class="forms-block">
         <h4 class="forms-head-text">НАПИШИ МНЕ</h4>

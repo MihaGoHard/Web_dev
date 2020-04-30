@@ -1,0 +1,53 @@
+                                                                   connect = [        arr = [          
+name:Purum   name:Banch   name:Simpson   name:Purga                                           { 
+                                                                                                 name:Purum,                 
+                                                                         Purum => 0        0     src: picture2,
+                                                                                                 discribe: text
+                                                                                               },
+
+                                                                                               { 
+                                                                                                 name:Banch,                
+                                                                         Banch => 1        1     src: picture2,
+                                                                                                 discribe: text
+                                                                                               },
+
+                                                                                               { 
+                                                                                                 name:Simpson,                
+                                                                       Simpson => 2        2     src: picture2,
+                                                                                                 discribe: text
+                                                                                               },
+
+                                                                                               { 
+                                                                                                 name:Purga,
+                                                                         Purga => 3        3     src: picture2,
+                                                                                                 discribe: text
+                                                                                               },
+
+                                                                                               { 
+                                                                                                 name:Dance,
+                                                                         Dance => 4        4     src: picture2,
+                                                                                                 discribe: text
+                                                                                               }
+                                                                                   .        . 
+                                                                                   .        .
+                                                                                   .        .
+                                                                                               {
+                                                                                   9        9
+                                                                        [                      }
+                                                                                             ]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

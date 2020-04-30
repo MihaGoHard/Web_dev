@@ -92,7 +92,7 @@
     background-image: none;
 }
 
-.press-me
+.move_left
 {
   display: block;
   width: 70px;
@@ -102,7 +102,14 @@
   border: none;
   outline: none;
 }
-.press-me_right
+
+.move_right
 {
-    background: url("/img/point2.png");
+  display: block;
+  width: 70px;
+  height: 70px;
+  margin: 177px 0 0 0;
+  background: url("/img/point2.png");
+  border: none;
+  outline: none;
 }

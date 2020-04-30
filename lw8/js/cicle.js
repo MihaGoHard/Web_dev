@@ -1,39 +1,23 @@
-let direction = 'middle';                 // начальное направление
-let number_of_indexes = films.length - 1;
-let number_of_elements = films.length;
-
-function moveRight() {
-  if (direction == 'middle') {        // певрое нажатие вправо 
-    direction = 'right'
-    count = 3;
-  }  
-  if (direction == 'left') {          // пересчёт счётчика, изменение направления left => right
-    recalcCount();
-    direction = 'right';
-  }   
-  filmsArticles.removeChild(filmsArticles.firstElementChild);                               
-  count < number_of_indexes ? count += 1 : count = 0;   // инкремент счётчика 
-  createElement();      
-  filmsArticles.appendChild(new_element);
-}
-
-function moveLeft() {
-  if (direction == 'middle') {
-    direction = 'left';
-    count = number_of_elements; 
-  }  
-  if (direction == 'right') {
-    recalcCount()
-    direction = 'left';
-  }                              
+function turnLeft(name_indexes) {
+  let direction = 'left';
+  let name = document.querySelectorAll('.film-column')[3].querySelector('.film-name').innerText;    // имя 4, удаляемого элемента, в HTML
+  let count = name_indexes[name] - 4;                                                               // получить индекс элемента для добавления
+  count < 0 ? count += 10 : null;                                                                   // если значение отрицательное
   filmsArticles.removeChild(filmsArticles.lastElementChild);
-  count > 0 ? count -= 1 : count = number_of_indexes; 
-  createElement();
-  filmsArticles.insertBefore(new_element, filmsArticles.firstElementChild);  
-}  
+  createElement(count, direction);                                                                  // добавить элемент в html
+} 
+  
+function turnRight(name_indexes) {
+  let direction = 'right';
+  let name = document.querySelector('.film-column').querySelector('.film-name').innerText;
+  let count = name_indexes[name] + 4;
+  count > 9 ? count -= 10 : null;
+  filmsArticles.removeChild(filmsArticles.firstElementChild);
+  createElement(count, direction);
+} 
 
-function createElement() {
-  new_element = document.createElement('div');
+function createElement(count, direction) {
+  const new_element = document.createElement('div');
   new_element.className = 'film-column'
   new_element.innerHTML = `<img alt="PoteryaPoter=(" src="${films[count].preview}" class="image">
                            <span class="film-name">
@@ -42,31 +26,20 @@ function createElement() {
                            <p class="film-text">
                              ${films[count].description}                          
                            </p>`;
+  direction == 'right' ? filmsArticles.append(new_element) : filmsArticles.prepend(new_element);                       
 }
 
-function recalcCount() { 
-  if (direction == 'left') {
-    count -= (number_of_indexes - 2); 
-    count < 0 ? count += number_of_elements : null;  
+function run() {
+  let name_indexes = [];                                                 // массив: имя элемента => индекс
+  for (let i = 0; i < films.length; i ++) {                                       
+    name_indexes[films[i].tittle] = i;
   }
-  if (direction == 'right') {
-    count += (number_of_indexes - 3);
-    count >= number_of_indexes ? count -= number_of_indexes : count += 1;
-  }
+  const moveLeft = document.querySelector('.move_left');
+  moveLeft.addEventListener('click', () => turnLeft(name_indexes));
+    
+	const moveRight = document.querySelector('.move_right');
+	moveRight.addEventListener('click', () => turnRight(name_indexes));
 }
 
+window.onload = run;
 
-
-
-/*window.onload = run;
-function ChangePlaceLeft() {
-  let movie = document.querySelectorAll('.film-column');
-  filmsArticles.removeChild(movie[0])
-  filmsArticles.appendChild(movie[0]);
-}
-document.querySelector('.a:last-child')
-function ChangePlaceRight() {
-  let movie = document.querySelectorAll('.film-column');
-  filmsArticles.removeChild(movie[4])
-  filmsArticles.insertBefore(movie[4], movie[0]);
-}*/
