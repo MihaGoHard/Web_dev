@@ -18,7 +18,7 @@
           <img alt="netu"src="img/line-right.png" class="forms-img">
         </div>
         <? require_once('../src/common.inc.php'); ?>
-        <? $_POST ? searchUserData() : formPage('feedback.tpl.php');?>
+        <? $_POST ? searchUserData() : formPage('feedback.tpl.php'); ?>
     </div>
   </body>    
 </html>

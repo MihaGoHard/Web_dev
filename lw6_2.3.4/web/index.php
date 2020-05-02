@@ -157,7 +157,7 @@
       <div class="forms-block">
         <h4 class="forms-head-text">НАПИШИ МНЕ</h4>
           <? require_once('../src/common.inc.php'); ?>
-          <?  $_POST ? updateUserData() : formPage('form.tpl.php');?>
+          <?  $_POST ? updateUserData() : formPage('form.tpl.php'); ?>
       </div>   
       <div class="footer">
         © 2006-2018 Поволжский государственный технологический университет, ФГБОУ ВО «ПГТУ»
