@@ -2,25 +2,27 @@ const VISIBLELEMENTS = 4;
 const ALLELEMENTS = 10;
 const LEFTBOTTOM = 0;
 const RIGHTBOTTOM = 9;
+const RIGHT = 'right';
+const LEFT = 'left'; 
 
-function turnLeft(name_indexes) {
-  let direction = 'left';
+function turnLeft() {
   const FILMCOLUMNLAST = document.querySelectorAll('.film-column')[3];
-  let name = FILMCOLUMNLAST.querySelector('.film-name').innerText;    // имя 4, удаляемого элемента, в HTML
-  let count = name_indexes[name] - VISIBLELEMENTS;                                                               // получить индекс элемента для добавления
-  count < LEFTBOTTOM ? count += ALLELEMENTS : null;                                                                   // если значение отрицательное
+  let name = FILMCOLUMNLAST.querySelector('.film-name').innerText;                                   // имя 4, удаляемого элемента, в HTML  
+  const index = films.findIndex(filmInfo => filmInfo.tittle == name);
+  let count = index - VISIBLELEMENTS;                                                               // получить индекс элемента для добавления
+  count < LEFTBOTTOM ? count += ALLELEMENTS : null;                                                 // если значение отрицательное
   filmsArticles.removeChild(filmsArticles.lastElementChild);
-  createElement(count, direction);                                                                  // добавить элемент в html
+  createElement(count, LEFT);                                                                       // добавить элемент в html
 } 
   
-function turnRight(name_indexes) {
-  let direction = 'right';
+function turnRight() {
   const FILMCOLUMFIRST = document.querySelector('.film-column')
   let name = FILMCOLUMFIRST.querySelector('.film-name').innerText;
-  let count = name_indexes[name] + VISIBLELEMENTS;
+  const index = films.findIndex(filmInfo => filmInfo.tittle == name);
+  let count = index + VISIBLELEMENTS;
   count > RIGHTBOTTOM ? count -= ALLELEMENTS : null;
   filmsArticles.removeChild(filmsArticles.firstElementChild);
-  createElement(count, direction);
+  createElement(count, RIGHT);
 } 
 
 function createElement(count, direction) {
@@ -33,19 +35,15 @@ function createElement(count, direction) {
                            <p class="film-text">
                              ${films[count].description}                          
                            </p>`;
-  direction == 'right' ? filmsArticles.append(new_element) : filmsArticles.prepend(new_element);                       
+  direction == RIGHT ? filmsArticles.append(new_element) : filmsArticles.prepend(new_element);                       
 }
 
 function run() {
-  let name_indexes = [];                                              // массив: имя элемента => индекс
-  for (let i = 0; i < films.length; i ++) {                                       
-    name_indexes[films[i].tittle] = i;
-  }
   const moveLeft = document.querySelector('.move_left');
-  moveLeft.addEventListener('click', () => turnLeft(name_indexes));
+  moveLeft.addEventListener('click', () => turnLeft());
     
 	const moveRight = document.querySelector('.move_right');
-	moveRight.addEventListener('click', () => turnRight(name_indexes));
+	moveRight.addEventListener('click', () => turnRight());
 }
 
 window.onload = run;
