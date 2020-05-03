@@ -1,17 +1,24 @@
+const VISIBLELEMENTS = 4;
+const ALLELEMENTS = 10;
+const LEFTBOTTOM = 0;
+const RIGHTBOTTOM = 9;
+
 function turnLeft(name_indexes) {
   let direction = 'left';
-  let name = document.querySelectorAll('.film-column')[3].querySelector('.film-name').innerText;    // имя 4, удаляемого элемента, в HTML
-  let count = name_indexes[name] - 4;                                                               // получить индекс элемента для добавления
-  count < 0 ? count += 10 : null;                                                                   // если значение отрицательное
+  const FILMCOLUMNLAST = document.querySelectorAll('.film-column')[3];
+  let name = FILMCOLUMNLAST.querySelector('.film-name').innerText;    // имя 4, удаляемого элемента, в HTML
+  let count = name_indexes[name] - VISIBLELEMENTS;                                                               // получить индекс элемента для добавления
+  count < LEFTBOTTOM ? count += ALLELEMENTS : null;                                                                   // если значение отрицательное
   filmsArticles.removeChild(filmsArticles.lastElementChild);
   createElement(count, direction);                                                                  // добавить элемент в html
 } 
   
 function turnRight(name_indexes) {
   let direction = 'right';
-  let name = document.querySelector('.film-column').querySelector('.film-name').innerText;
-  let count = name_indexes[name] + 4;
-  count > 9 ? count -= 10 : null;
+  const FILMCOLUMFIRST = document.querySelector('.film-column')
+  let name = FILMCOLUMFIRST.querySelector('.film-name').innerText;
+  let count = name_indexes[name] + VISIBLELEMENTS;
+  count > RIGHTBOTTOM ? count -= ALLELEMENTS : null;
   filmsArticles.removeChild(filmsArticles.firstElementChild);
   createElement(count, direction);
 } 
@@ -30,7 +37,7 @@ function createElement(count, direction) {
 }
 
 function run() {
-  let name_indexes = [];                                                 // массив: имя элемента => индекс
+  let name_indexes = [];                                              // массив: имя элемента => индекс
   for (let i = 0; i < films.length; i ++) {                                       
     name_indexes[films[i].tittle] = i;
   }
