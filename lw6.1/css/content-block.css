@@ -1,4 +1,4 @@
-.lists-block
+.lists_block
 {
     display: flex;
     flex-direction: column;
@@ -6,14 +6,14 @@
     margin-top: 161px;
     width: 390px;
 }
-.list-head
+.list_head
 {
     display: block;
     margin: 44px 0 0;
     font: 600 24px/32px "Open Sans", "sans-serif";
     color: #15a98c;  
 }
-.list-head_films
+.list_head_films
 {
     margin: 41px 0 0;
 }
@@ -32,7 +32,7 @@
     height: 170px;
     list-style: decimal;
 }
-.list-element
+.list_element
 {
     margin: 0 0 0 4px;
     width: 280px;
@@ -42,34 +42,34 @@
     background-position-y: 15px ;
     color: #555555;
 }
-.list-element_films
+.list_element_films
 {
     margin: 0 0 0 1.5px;
     text-indent: unset;
     background-image: none;
 }
-.list-element_films-trumen
+.list_element_films-trumen
 {
     margin: 0 0 0 -1px;
     text-indent: unset;
     background-image: none;
 }
 
-.inform-block
+.inform_block
 {
     display: flex;
     flex-direction: column;
     width: 565px;
     height: 700px;
 }
-.inform-block-first-head
+.inform_block_first_head
 {
     display: block;
     margin: 45px 0 0 4px;
     font: 700 48px/42px "Open Sans";
     color: #333333;
 }
-.inform-block-first-head:after
+.inform_block_first_head:after
 {
     display: block;
     margin: 31px 0 0 -4px;
@@ -79,7 +79,7 @@
     border-radius: 3px;
     background-color: #45c3aa;
 }
-.inform-block-second-head
+.inform_block_second_head
 {
     display: block;
     margin: 25px 0 0 0;
@@ -88,7 +88,7 @@
     font: 400 36px/42px "Open Sans";
     color: #333333;
 }
-.inform-block-text
+.inform_block_text
 {
     display: block;
     margin-top: 44px;
@@ -98,7 +98,7 @@
     text-align: left;
     color: #555555;
 }
-.inform-block-text_hobby
+.inform_block_text_hobby
 {
     margin: 15px 0 0 0;
     display: block;
@@ -114,7 +114,7 @@
     width: 170px;
     height: 42px;
 }
-.letter-words
+.letter_words
 {
     display: block;
     margin-top: -2px;
@@ -125,7 +125,7 @@
     color: #15a98b;
     border-bottom: 1.5px inset #54d1b8;
 }
-.letter-words_pointer
+.letter_words_pointer
 {
     width: 20px;
     margin-left: 4px;

@@ -1,4 +1,4 @@
-.forms-head-text
+.forms_head_text
 {
     display: block;
     text-indent: -1px;
@@ -8,7 +8,7 @@
     font: 300 36px/42px "Open Sans";
     color: #333333;
 }
-.forms-head-text::before
+.forms_head_text::before
 {
     display: block;
     position: absolute;
@@ -18,7 +18,7 @@
     height: 1px;
     background: url("../img/line-left.png") no-repeat;
 }
-.forms-head-text::after
+.forms_head_text::after
 {
     display: block;
     position: absolute;
@@ -29,7 +29,7 @@
     background: url("../img/line-right.png") no-repeat;
 }
 
-.form-window
+.form_window
 {
     display: flex;
     flex-direction: column;
@@ -38,16 +38,16 @@
     width: 540px;
     height: 85px;
 }
-.form-window_email
+.form_window_email
 {
     margin-top: 24px;
 }
-.form-window_country
+.form_window_country
 {
     margin-top: 25px;
 }
 
-.form-feel
+.form_feel
 {
     display: block;
     margin: 3px 0 0 1px;
@@ -59,13 +59,13 @@
     font-size: 19px;
     outline: unset;
 }
-.form-feel:active,
-.form-feel:focus
+.form_feel:active,
+.form_feel:focus
 {
     border-color: #21d1ae;
 }
 
-.form-feel_select
+.form_feel_select
 {
     width: 540px;
     margin-top: 4px;
@@ -75,35 +75,33 @@
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
-    background: url("../img/arrow_down.png") no-repeat;
-    background-position-x: 498px;
-    background-position-y: 18px;
+    background: url("../img/arrow_down.png") no-repeat 498px 18px;
 }
 
-.form-feel_textarea
+.form_feel_textarea
 {
     overflow: auto;
     height: 122px;
     resize: none; 
 }
 
-.form-name
+.form_name
 {
     font: 400 20px/32px "Open Sans";
     color: #333333;
 }
-.form-name-marked
+.form_name_marked
 {
     font: 400 20px/32px "Open Sans";
     color: #333333;
 }
-.form-name-marked::after
+.form_name_marked::after
 {
     content: " *";
     color: red;
 }
 
-.gender-name
+.gender_name
 {
     display: block;
     font: 400 20px/32px Open Sans;
@@ -116,7 +114,7 @@
     margin: 42px 0 0 103px;
 }
 
-.gender-choice
+.gender_choice
 {
     display: block;
     margin: 5px 4px 0 -4px;
@@ -127,11 +125,11 @@
     color: #333333;
 }
 
-.text-area
+.text_area
 {
     width: 572px;
     height: 200px;
-    margin: 24px 0 0 103px ;
+    margin: 24px 0 0 103px;
 }
 
 

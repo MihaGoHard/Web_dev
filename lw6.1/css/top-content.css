@@ -1,4 +1,4 @@
-.photo-blockquote
+.photo_blockquote
 {
     display: block;
     position: relative;
@@ -6,7 +6,7 @@
     width: 960px;
     height: 400px;
 }
-.main-photo
+.main_photo
 {
     display: block;
     position: absolute;
@@ -15,7 +15,7 @@
     height: 350px; 
     border-radius: 5px;  
 }
-.blockquote-block
+.blockquote_block
 {
     display: block;
     position: absolute;
@@ -23,7 +23,7 @@
     width: 530px;
     height: 135px;
 }
-.blockquote-text
+.blockquote_text
 {
     display: block;
     margin: 0 auto;
@@ -31,7 +31,7 @@
     text-align: left;
     color: #ffffff;
 }
-.blockquote-author
+.blockquote_author
 {
     display: block;
     margin: 2px 0 0 3px;
