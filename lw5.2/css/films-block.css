@@ -1,4 +1,4 @@
-.film-header
+.film_header
 {
     display: block;
     margin-bottom: 0;
@@ -6,7 +6,7 @@
     color: #333333;
 }
 
-.films-articles-block
+.films_articles_block
 {
     display: flex;
     flex-basis: auto;
@@ -16,7 +16,7 @@
     width: 1200px;
 }
 
-.film-column
+.film_column
 {
     display: block;
     width: 285px;
@@ -30,7 +30,7 @@
     border-radius: 5px;
     background-color: #464646;
 }
-.film-name
+.film_name
 {
     display: block;
     margin: 23px 0 0 0;
@@ -39,11 +39,11 @@
     font: 700 22px/32px "Open Sans";
     color: #333333;
 }
-.film-name_astral
+.film_name_astral
 {
     text-indent: 0.3px;
 }
-.film-text
+.film_text
 {
     display: block;
     margin: 17px 0 0 0;
