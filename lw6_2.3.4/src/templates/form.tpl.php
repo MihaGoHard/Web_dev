@@ -160,16 +160,12 @@
         <form action="" method="POST">
           <div class="form-window">
             <span class="form-name-marked">Ваше имя</span>
-            <input class="form-feel" type="text"
-              style="border-color:<? print $args['first_name'][1]; ?>" name="first_name" 
-              value="<? print $args['first_name'][0]; ?>" autocomplete="off" /> <br />
+            <input class="form-feel" type="text" style="border-color:<? print $args['first_name'][1]; ?>" name="first_name" value="<? print $args['first_name'][0]; ?>" autocomplete="off" /> <br />
           </div>
 
           <div class="form-window form-window_email">
             <span class="form-name-marked">Ваш email</span> 
-            <input class="form-feel" type="text" 
-              style="border-color:<? print $args['email'][1]; ?>" name="email" 
-              value="<? print $args['email'][0];?>" autocomplete="off" /> <br />
+            <input class="form-feel" type="text" style="border-color:<? print $args['email'][1]; ?>" name="email" value="<? print $args['email'][0]; ?>" autocomplete="off" /> <br />
           </div>
 
           <div class="form-window form-window_country">
@@ -198,12 +194,10 @@
 
           <div class="text-area">
             <span class="form-name-marked">Ваше сообщение</span> 
-            <textarea class="form-feel form-feel_textarea"
-              style="border-color: <? print $args['messege'][1];?>" type="text" name="messege" 
-              value="" autocomplete="off"><? print $args['messege'][0]; ?></textarea>
+            <textarea class="form-feel form-feel_textarea" style="border-color:<? print $args['messege'][1]; ?>" type="text" name="messege" value="" autocomplete="off"><? print $args['messege'][0]; ?></textarea>
           </div>
           <div>
-            <button class="button button_sent" type="submit"  >
+            <button class="button button_sent" type="submit" >
               Отправить
             </button>  
           </div>

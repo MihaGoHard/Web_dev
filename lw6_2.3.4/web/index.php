@@ -1,10 +1,10 @@
 <?
 require_once('../src/common.inc.php');
-if ($_SERVER['REQUEST_METHOD'] === 'POST')
-{ 
+if (checkPostMethod())
+{
     updateUserData();
 }
 else
-{  
-    formPage('form.tpl.php');
+{
+    renderTemplate('form.tpl.php');
 }

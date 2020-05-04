@@ -2,11 +2,11 @@
 function updateUserData() 
 {      
     $email = getPOSTParameter('email');
-    $first_name = getPOSTParameter('first_name');
+    $firstName = getPOSTParameter('first_name');
     $country = getPOSTParameter('country');
     $gender = getPOSTParameter('gender');
     $messege = getPOSTParameter('messege');
-    $form_valid_arr = [                     //массив для отображения ошибки в форме
+    $formValidArr = [                     //массив для отображения ошибки в форме
               'first_name' => ['', 'red'], 
               'email' => ['', 'red'], 
               'gender' => '' , 
@@ -14,7 +14,7 @@ function updateUserData()
               'messege' => ['', 'red'],
               'sent' => ''
               ];
-    $to_file_arr = [                        //массив для записи в файл, массивы не зависят друг от друга                                            
+    $toFileArr = [                        //массив для записи в файл, массивы не зависят друг от друга                                            
               'first_name' => '',
               'email' => '',
               'gender' => '' ,
@@ -24,48 +24,48 @@ function updateUserData()
 
     if (validateEmail($email) === 'empty' || validateEmail($email) === 'wrong input')
     {
-        $form_valid_arr['email'] = [$email, 'red'];
+        $formValidArr['email'] = [$email, 'red'];
     }
     if (validateEmail($email) === 'succes')
     {
-        $form_valid_arr['email'] = [$email, ''];
-        $to_file_arr['email'] = $email;
+        $formValidArr['email'] = [$email, ''];
+        $toFileArr['email'] = $email;
     }
                  
-    if (validateFirstName($first_name) === 'empty' || validateFirstName($first_name) === 'wrong input')
+    if (validateFirstName($firstName) === 'empty' || validateFirstName($firstName) === 'wrong input')
     {
-        $form_valid_arr['first_name'] = [$first_name, 'red'];
+        $formValidArr['first_name'] = [$firstName, 'red'];
     }        
-    if (validateFirstName($first_name) === 'succes')
+    if (validateFirstName($firstName) === 'succes')
     {
-        $form_valid_arr['first_name'] = [$first_name, ''];
-        $to_file_arr['first_name'] = $first_name;
+        $formValidArr['first_name'] = [$firstName, ''];
+        $toFileArr['first_name'] = $firstName;
     }
 
     if (validateSimpleField($messege) === 'succes')
     {
-        $form_valid_arr['messege'] = [$messege, ''];
-        $to_file_arr['messege'] = $messege;
+        $formValidArr['messege'] = [$messege, ''];
+        $toFileArr['messege'] = $messege;
     }
 
     if (validateSimpleField($gender) === 'succes')
     {
-        $form_valid_arr['gender'] = [$gender, ''];
-        $to_file_arr['gender'] = $gender; 
+        $formValidArr['gender'] = [$gender, ''];
+        $toFileArr['gender'] = $gender; 
     }
 
     if (validateSimpleField($country) === 'succes')
     {
-        $form_valid_arr['country'] = [$country => ''];
-        $to_file_arr['country'] = $country; 
+        $formValidArr['country'] = [$country => ''];
+        $toFileArr['country'] = $country; 
     }
 
-    if ($to_file_arr['email'] != '' && $to_file_arr['first_name'] != '' && $to_file_arr['messege'] != '')
+    if ($toFileArr['email'] != '' && $toFileArr['first_name'] != '' && $toFileArr['messege'] != '')
     {
-        saveUserData($email, $to_file_arr);
-        $form_valid_arr = ['sent' => 'succes'];
+        saveUserData($email, $toFileArr);
+        $formValidArr = ['sent' => 'succes'];
     }
-    renderTemplate('form.tpl.php', $form_valid_arr);
+    renderTemplate('form.tpl.php', $formValidArr);
 }    
 
 
