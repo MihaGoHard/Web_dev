@@ -1,6 +1,3 @@
-Расположение файлов
-main/
-
   src/
     pages/
         form_page.php                   проверка типа запроса, подключение common.inc.php
@@ -25,5 +22,4 @@ main/
 		images/
 		Index.php                         
 		feedbacks.php
-README.md
 
