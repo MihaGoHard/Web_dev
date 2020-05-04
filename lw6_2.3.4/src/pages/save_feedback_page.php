@@ -1,49 +1,77 @@
 <?
 function updateUserData() 
-{                  
-    $keys = ['First Name', 'Email', 'Country', 'Messege', 'Gender']; // параметры
-    $data = [];
-    $status = ['email' => 'mistace', 'name' => 'mistace', 'messege' => 'mistace'];
+{      
+    $email = getPOSTParameter('email');
+    $first_name = getPOSTParameter('first_name');
+    $country = getPOSTParameter('country');
+    $gender = getPOSTParameter('gender');
+    $messege = getPOSTParameter('messege');
+    $form_valid_arr = [                     //массив для отображения ошибки в форме
+              'first_name' => ['', 'red'], 
+              'email' => ['', 'red'], 
+              'gender' => '' , 
+              'country' => '',
+              'messege' => ['', 'red'],
+              'sent' => ''
+              ];
+    $to_file_arr = [                        //массив для записи в файл, массивы не зависят друг от друга                                            
+              'first_name' => '',
+              'email' => '',
+              'gender' => '' ,
+              'country' => '',
+              'messege' => ''
+              ];
 
-    foreach ($keys as $key)
+    if (validateEmail($email) === 'empty' || validateEmail($email) === 'wrong input')
     {
-        $formatedKey = str_replace(' ', '_', strtolower($key));
-        $data[$key . ':'] = getPOSTParameter($formatedKey);
+        $form_valid_arr['email'] = [$email, 'red'];
     }
-    
-    if ((filter_var($data['Email:'], FILTER_VALIDATE_EMAIL) == '') || ($data['Email:'] === ''))
+    if (validateEmail($email) === 'succes')
     {
-        $status['email'] = 'mistace'; 
+        $form_valid_arr['email'] = [$email, ''];
+        $to_file_arr['email'] = $email;
     }
-    else
+                 
+    if (validateFirstName($first_name) === 'empty' || validateFirstName($first_name) === 'wrong input')
     {
-        $status['email'] = 'ok';
-        $email = $email = getPOSTParameter('email');
-    }     
-
-    if ((($data['First Name:'] != '') && (!preg_match_all('/^[a-zA-Z]+$/', $data['First Name:'])) || ($data['First Name:'] === '')))
+        $form_valid_arr['first_name'] = [$first_name, 'red'];
+    }        
+    if (validateFirstName($first_name) === 'succes')
     {
-        $status['First Name:'] = 'mistace';
-    }     
-    else
-    {
-        $status['name'] = 'ok';
+        $form_valid_arr['first_name'] = [$first_name, ''];
+        $to_file_arr['first_name'] = $first_name;
     }
 
-    ($data['Messege:'] === '') ? $status['messege'] = 'mistace' : $status['messege'] = 'ok';
-    
-    if (($status['email'] === 'ok') && ($status['name'] === 'ok') && ($status['messege'] === 'ok'))
-    { 
-        $toFileData = $data;
-        $fileAddres = "../src/user_data/" . strtolower($email) . ".txt";   
-        
-        if (file_exists($fileAddres))                                      // проверка существования такого файла
-        {
-            $fileUserData = getDataFromFile($fileAddres);
-            $toFileData = joinArrays($fileUserData, $data);                // обновление файла данными из query string       
-        }
-        addDataToFile($toFileData, $fileAddres);
-        $status = 'Отправлено';
-    }  
-    renderTemplate('form.tpl.php', [$status, $data]);
-}
+    if (validateSimpleField($messege) === 'succes')
+    {
+        $form_valid_arr['messege'] = [$messege, ''];
+        $to_file_arr['messege'] = $messege;
+    }
+
+    if (validateSimpleField($gender) === 'succes')
+    {
+        $form_valid_arr['gender'] = [$gender, ''];
+        $to_file_arr['gender'] = $gender; 
+    }
+
+    if (validateSimpleField($country) === 'succes')
+    {
+        $form_valid_arr['country'] = [$country => ''];
+        $to_file_arr['country'] = $country; 
+    }
+
+    if ($to_file_arr['email'] != '' && $to_file_arr['first_name'] != '' && $to_file_arr['messege'] != '')
+    {
+        saveUserData($email, $to_file_arr);
+        $form_valid_arr = ['sent' => 'succes'];
+    }
+    renderTemplate('form.tpl.php', $form_valid_arr);
+}    
+
+
+
+
+
+
+
+

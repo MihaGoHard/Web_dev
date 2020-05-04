@@ -1,3 +1,10 @@
 <?
 require_once('../src/common.inc.php'); 
-$_POST ? searchUserData() : formPage('feedback.tpl.php');
+if ($_SERVER['REQUEST_METHOD'] === 'POST')
+{ 
+    searchUserData();
+}
+else
+{  
+    formPage('feedback.tpl.php');
+}

@@ -5,5 +5,6 @@ require_once('pages/save_feedback_page.php');
 require_once('utils/request.php');
 require_once('utils/template.php');
 require_once('utils/file_exchange.php');
+require_once('utils/validation.php');
 
 

@@ -161,15 +161,15 @@
           <div class="form-window">
             <span class="form-name-marked">Ваше имя</span>
             <input class="form-feel" type="text"
-              style="border-color:<? $args[0]['name'] === 'mistace' ? print 'red' : print ''; ?>" name="first_name" 
-              value="<? $args[1]['First Name:'] != 'null' ? print $args[1]['First Name:'] : print ''; ?>" autocomplete="off" /> <br />
+              style="border-color:<? print $args['first_name'][1]; ?>" name="first_name" 
+              value="<? print $args['first_name'][0]; ?>" autocomplete="off" /> <br />
           </div>
 
           <div class="form-window form-window_email">
             <span class="form-name-marked">Ваш email</span> 
             <input class="form-feel" type="text" 
-              style="border-color:<? $args[0]['email'] == 'mistace' ? print 'red' : null; ?>" name="email" 
-              value="<? $args[1]['Email:'] != 'null' ? print $args[1]['Email:'] : null; ?>" autocomplete="off" /> <br />
+              style="border-color:<? print $args['email'][1]; ?>" name="email" 
+              value="<? print $args['email'][0];?>" autocomplete="off" /> <br />
           </div>
 
           <div class="form-window form-window_country">
@@ -195,14 +195,13 @@
               </label>
             </div> 
           </div>
-          
+
           <div class="text-area">
             <span class="form-name-marked">Ваше сообщение</span> 
             <textarea class="form-feel form-feel_textarea"
-              style="border-color: <? $args[0]['messege'] == 'mistace' ? print 'red' : null; ?>" type="text" name="messege" 
-              value="" autocomplete="off"><? $args[1]['Messege:']  != 'null' ? print $args[1]['Messege:']  : null; ?></textarea>
+              style="border-color: <? print $args['messege'][1];?>" type="text" name="messege" 
+              value="" autocomplete="off"><? print $args['messege'][0]; ?></textarea>
           </div>
-
           <div>
             <button class="button button_sent" type="submit"  >
               Отправить
@@ -212,7 +211,13 @@
             <a class="button_search" href="../web/feedbacks.php">Поиск анкеты</a>
           </div>
         </form> 
-      </div>   
+      </div>
+
+      <? if ($args['sent'] === 'succes'): ?>
+        <div class="sent">
+          &#10004; ОТПРАВЛЕНО
+        </div>
+      <? endif; ?>  
       <div class="footer">
         © 2006-2018 Поволжский государственный технологический университет, ФГБОУ ВО «ПГТУ»
       </div>  

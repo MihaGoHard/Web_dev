@@ -134,6 +134,15 @@
     margin: 24px 0 0 103px ;
 }
 
+.sent
+{
+    position: absolute;
+    margin: -12px 0 0 450px;
+    width: 200px;
+    height: 50px;   
+    text-align: center;
+    color: #333333;
+}
 
 
 
