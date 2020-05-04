@@ -1,5 +1,7 @@
 Расположение файлов
-src/
+main/
+
+  src/
     pages/
         form_page.php                   проверка типа запроса, подключение common.inc.php
         save_feedback_page.php          сохранение данных в файл, валидация
@@ -18,7 +20,7 @@ src/
     user_data/                          файл с сохранёнными данными
 
     common.inc.php                      подкючение файлов с функциями 
-web/
+  web/
 		css/
 		images/
 		Index.php                         
