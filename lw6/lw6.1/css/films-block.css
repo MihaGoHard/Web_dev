@@ -1,0 +1,55 @@
+.film_header
+{
+    display: block;
+    margin-bottom: 0;
+    font: 400 36px/41px "Open Sans";
+    color: #333333;
+}
+
+.films_articles_block
+{
+    display: flex;
+    flex-basis: auto;
+    flex-flow: row wrap;
+    justify-content: space-between; 
+    margin: 32px 0 0 0;
+    width: 1200px;
+}
+
+.film_column
+{
+    display: block;
+    width: 285px;
+}
+.image
+{
+    display: block;
+    margin-top: 2px;
+    width: 285px;
+    height: 190px;
+    border-radius: 5px;
+    background-color: #464646;
+}
+.film_name
+{
+    display: block;
+    margin: 23px 0 0 0;
+    width: 280px;
+    text-indent: -2px;
+    font: 700 22px/32px "Open Sans";
+    color: #333333;
+}
+.film_name_astral
+{
+    text-indent: 0.3px;
+}
+.film_text
+{
+    display: block;
+    margin: 17px 0 0 0;
+    width: 285px;
+    height: auto;
+    font: 16px/28px Georgia;
+    color: #555555;
+}
+
