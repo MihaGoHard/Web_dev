@@ -65,6 +65,19 @@
     border-color: #21d1ae;
 }
 
+.form_feel_red
+{
+    display: block;
+    margin: 3px 0 0 1px;
+    padding: 12px;
+    padding-left: 19px;
+    width: 505px;
+    border-radius: 3px;
+    border: 2px solid red;
+    font-size: 19px;
+    outline: unset;
+}
+
 .form_feel_select
 {
     width: 540px;
