@@ -1,4 +1,4 @@
-<?
+<?php
 function validateEmail(string $email):string
 {
     if ($email != null)

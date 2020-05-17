@@ -1,4 +1,4 @@
-<?
+<?php
 function joinArrays(array $fromFile, array $fromGetString): array
 {
     $deletNullGetString = array_diff($fromGetString, array(''));       // удаляет элемент с пустыми значениями из массива

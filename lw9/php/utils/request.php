@@ -1,4 +1,4 @@
-<?
+<?php
 function checkPostMethod(): bool
 {
     if ($_SERVER['REQUEST_METHOD'] === 'POST')

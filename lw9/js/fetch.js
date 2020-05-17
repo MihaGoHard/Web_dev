@@ -1,13 +1,13 @@
 function start() {
   runCicle();
-  const submitEvent = document.querySelector('form');
-  submitEvent.addEventListener('submit', () => sentRequest(event));
+  const elementForm = document.querySelector('form');
+  elementForm.addEventListener('submit', sentRequest);
 }
 window.onload = start;
 
-async function sentRequest(event) {
-  event.preventDefault();
-  if (event.defaultPrevented) {
+async function sentRequest(submitEvent) {
+  submitEvent.preventDefault();
+  if (submitEvent.defaultPrevented) {
     const validResult = await sendRequest();
     console.log(validResult);
     if (validResult != null) {
