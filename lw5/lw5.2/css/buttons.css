@@ -42,9 +42,17 @@
     background-image: url("../img/video_icon2.png");
 }
 
+
+.center_button_films
+{
+    margin: 54px auto;
+    width: 241px;
+    height: 50px;
+}
 .button_films
 {
-    margin: 54px 0 0 480px;
+    display: block;
+    margin: 0 0 0 0;
     text-indent: 0;
     width: 220px;
     height: 50px;
