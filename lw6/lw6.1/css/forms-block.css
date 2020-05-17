@@ -1,6 +1,7 @@
 .forms_head_text
 {
     display: block;
+    position: relative;
     text-indent: -1px;
     width: 257px;
     height: 40px;
@@ -12,7 +13,8 @@
 {
     display: block;
     position: absolute;
-    margin: 21px 0 0 -228px;
+    top: 21px;
+    right: 285px;
     content: "";
     width: 200px;
     height: 1px;
@@ -22,7 +24,8 @@
 {
     display: block;
     position: absolute;
-    margin: -21px 0 0 270px;
+    top: 21px;
+    left: 270px;
     content: "";
     width: 200px;
     height: 1px;
