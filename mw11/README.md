@@ -1,6 +1,6 @@
 # LW11
 ## ~conf  
-  nginx.conf   
+  * nginx.conf   
 ## src  
   * config  
     config.php  
@@ -19,12 +19,12 @@
      request.php  
      template.php  
      validation.php  
-  ### common.inc.php  
+  * ### common.inc.php  
 ## web  
   * css  
   * img  
-  ### feedbacks.php  
-  ### index.php  
+  * ### feedbacks.php  
+  * ### index.php  
 ## README.DM    
 
      
