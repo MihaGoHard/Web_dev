@@ -1,0 +1,30 @@
+.button
+{
+    display: block;
+    margin: 100px 0 0 105px;
+    width: 220px;
+    height: 50px;
+    text-decoration: none;
+    text-align: center;
+    font: 19px Georgia; 
+    line-height: 40px;
+    border: none;
+    border-radius: 5px;
+    background-color: teal;
+    color: #333333;
+
+}
+.button:hover,
+.button:focus
+{
+    color: aliceblue;
+    background-color: #15a98c;
+}
+
+.button_search
+{
+    margin: -51px 0 0 425px;
+    font: 19px/50px Georgia; 
+}   
+
+

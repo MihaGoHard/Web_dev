@@ -1,0 +1,92 @@
+.forms-head
+{
+    margin-left: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 40px;
+    justify-content: space-between;
+    width: 700px;
+}
+
+.forms-img
+{
+    display: block;
+    margin-top: 2px;
+    width: 200px;
+    height: 1px;
+}
+
+.forms-head-text
+{
+    display: block;
+    width: 300px;
+    height: 40px;
+    margin-left: 15px;
+    font: 300 36px/42px "Open Sans";
+    color: #333333;
+}
+.form-window
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 70px 0 0 114.5px;
+    width: 540px;
+    height: 85px;
+}
+.form-window_email
+{
+    margin: 0 auto;
+    margin-top: 80px;
+}
+
+.form-feel
+{
+    display: block;
+    margin: 3px 0 0 1px;
+    padding: 12px;
+    padding-left: 19px;
+    width: 505px;
+    border-radius: 3px;
+    border: 2px solid #c9c9c9;
+    font-size: 19px;
+    outline: unset;
+}
+.form-feel:active,
+.form-feel:focus
+{
+    border-color: #21d1ae;
+}
+
+
+.form-feel_textarea
+{
+    margin: 0 auto;
+    margin-top: 100px;
+    overflow: auto;
+    height: 122px;
+    resize: none;
+}
+
+.form-name
+{
+    font: 400 20px/32px "Open Sans";
+    color: #333333;
+}
+.form-name_mistace
+{
+    display: block;
+    margin: 120px 0 0 220px;
+}
+.form-name_marker
+{
+    color: red;
+}
+
+
+
+
+
+
+

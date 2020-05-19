@@ -1,0 +1,45 @@
+.main
+{
+    display: flex;
+    flex-basis: auto;
+    flex-direction: column; 
+    min-height: 100%; 
+}
+
+.forms-block
+{
+    display: flex;
+    flex-basis: auto;
+    flex-direction: column;
+    margin: 0 auto;
+    margin-top: 50px;
+    width: 750px;
+}
+
+.user-data
+{
+    display: flex;
+    flex-direction: column;
+    width: 485px;
+    min-height: 200px;
+    margin: 100px 0 0 103px;
+}
+.list
+{
+    display: block;
+    width: 465px;
+    min-height: 180px;
+    margin: 0 auto;
+    border-radius: 3px;
+    border: 2px solid #c9c9c9;    
+}
+.list-element
+{
+    font: 400 20px/32px Open Sans;
+    text-align: left;
+    color: #333333;
+}
+.list-element_ahtung
+{
+    list-style: circle;
+}
