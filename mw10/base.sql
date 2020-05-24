@@ -1,32 +1,32 @@
-CREATE DATABASE университет;
-USE университет;
+CREATE DATABASE university;
+USE university;
  
-CREATE TABLE студент      
+CREATE TABLE student      
 (                                                   
     student_id               INT AUTO_INCREMENT NOT NULL,
     last_name                VARCHAR(255)       NOT NULL,
     name                     VARCHAR(255)       NOT NULL,
     middle_name              VARCHAR(255)       NOT NULL,
     date_of_birth            DATE               NOT NULL,
-    group_id                 TINYINT UNSIGNED   NOT NULL,
+    group_id                 INT                NOT NULL,
     PRIMARY KEY (student_id)                                
 ) DEFAULT CHARACTER SET utf8mb4                     
   COLLATE `utf8mb4_unicode_ci`                      
   ENGINE = InnoDB                                   
 ;
 
-CREATE TABLE группа
+CREATE TABLE group
 (                                                   
     group_id               INT AUTO_INCREMENT NOT NULL,
     group_name             VARCHAR(255)       NOT NULL,
-    faculty_id             TINYINT UNSIGNED   NOT NULL,
+    faculty_id             INT                NOT NULL,
     PRIMARY KEY (group_id)                                
 ) DEFAULT CHARACTER SET utf8mb4                     
   COLLATE `utf8mb4_unicode_ci`                      
   ENGINE = InnoDB                                   
 ;
 
-CREATE TABLE факультет
+CREATE TABLE faculty
 (                                                   
     faculty_id               INT AUTO_INCREMENT NOT NULL,
     faculty_name             VARCHAR(255)       NOT NULL,
@@ -36,7 +36,7 @@ CREATE TABLE факультет
   ENGINE = InnoDB                                   
 ;
 
-INSERT INTO студент(last_name, name, middle_name, date_of_birth, group_id)
+INSERT INTO student(last_name, name, middle_name, date_of_birth, group_id)
     VALUES 
         ('КАМЕНСКИХ', 'АННА', 'ДИМОНОВНА', '1998-03-20', 1),
         ('ЧЕРЕПАНОВА', 'МАРИНА', 'АНДРЕЕВНА', '1997-01-08', 2),
@@ -84,7 +84,7 @@ INSERT INTO студент(last_name, name, middle_name, date_of_birth, group_id
         ('БИЛАН', 'ДМИТРИЙ', 'АНАТОЛЬЕВИЧ', '2003-10-09,', 2),
         ('КИРКОРОВ', 'ФИЛИПП', 'БЕДРОСОВИЧ', '2003-12-08', 1);
 
-INSERT INTO группа(group_name, faculty_id)
+INSERT INTO group(group_name, faculty_id)
     VALUES
         ('ПС-11', 1),
         ('ПС-12', 1),
@@ -96,7 +96,7 @@ INSERT INTO группа(group_name, faculty_id)
         ('АО-12', 3),
         ('АОиС-11', 3);
 
-INSERT INTO факультет(faculty_name)
+INSERT INTO faculty(faculty_name)
     VALUES 
         ('ПРОГРАММНЫХ СИСТЕМ'),
         ('ЭКОНОМИКИ'),
@@ -109,7 +109,7 @@ SELECT
     middle_name AS "Отчество",
     date_of_birth AS "Возраст: 19 лет"
 FROM 
-    студент
+    student
 WHERE 
     (date_of_birth > DATE_SUB(CURDATE(), INTERVAL 20 YEAR)) && (date_of_birth < DATE_SUB(CURDATE(), INTERVAL 19 YEAR));
 
@@ -120,9 +120,9 @@ SELECT
     middle_name AS "Отчество",
     group_name AS "Группа"
 FROM
-    студент
+    student
 INNER JOIN
-    группа ON группа.group_id = студент.group_id
+    group ON group.group_id = student.group_id
 WHERE
     group_name = 'АО-11';
 
@@ -133,11 +133,11 @@ SELECT
     middle_name AS "Отчество",
     faculty_name AS "Факультет"
 FROM
-    студент
+    student
 INNER JOIN
-    группа ON группа.group_id = студент.group_id
+    group ON group.group_id = student.group_id
 INNER JOIN
-    факультет ON факультет.faculty_id = группа.faculty_id    
+    faculty ON faculty.faculty_id = group.faculty_id    
 WHERE
     faculty_name = 'Экономики'; 
 
@@ -149,10 +149,10 @@ SELECT
     faculty_name AS "Факультет",
     group_name AS "Группа"
 FROM
-    студент
+    student
 INNER JOIN
-    группа ON группа.group_id = студент.group_id
+    group ON group.group_id = student.group_id
 INNER JOIN
-    факультет ON факультет.faculty_id = группа.faculty_id    
+    faculty ON faculty.faculty_id = group.faculty_id    
 WHERE
     last_name = 'КИСЕЛЁВА' && name = 'ЮЛИЯ';
