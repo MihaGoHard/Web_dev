@@ -15,7 +15,7 @@ CREATE TABLE student
   ENGINE = InnoDB                                   
 ;
 
-CREATE TABLE group
+CREATE TABLE groups
 (                                                   
     group_id               INT AUTO_INCREMENT NOT NULL,
     group_name             VARCHAR(255)       NOT NULL,
@@ -84,7 +84,7 @@ INSERT INTO student(last_name, name, middle_name, date_of_birth, group_id)
         ('БИЛАН', 'ДМИТРИЙ', 'АНАТОЛЬЕВИЧ', '2003-10-09,', 2),
         ('КИРКОРОВ', 'ФИЛИПП', 'БЕДРОСОВИЧ', '2003-12-08', 1);
 
-INSERT INTO group(group_name, faculty_id)
+INSERT INTO groups(group_name, faculty_id)
     VALUES
         ('ПС-11', 1),
         ('ПС-12', 1),
@@ -122,7 +122,7 @@ SELECT
 FROM
     student
 INNER JOIN
-    group ON group.group_id = student.group_id
+    groups ON groups.group_id = student.group_id
 WHERE
     group_name = 'АО-11';
 
@@ -135,9 +135,9 @@ SELECT
 FROM
     student
 INNER JOIN
-    group ON group.group_id = student.group_id
+    groups ON groups.group_id = student.group_id
 INNER JOIN
-    faculty ON faculty.faculty_id = group.faculty_id    
+    faculty ON faculty.faculty_id = groups.faculty_id    
 WHERE
     faculty_name = 'Экономики'; 
 
@@ -151,8 +151,8 @@ SELECT
 FROM
     student
 INNER JOIN
-    group ON group.group_id = student.group_id
+    groups ON groups.group_id = student.group_id
 INNER JOIN
-    faculty ON faculty.faculty_id = group.faculty_id    
+    faculty ON faculty.faculty_id = groups.faculty_id    
 WHERE
     last_name = 'КИСЕЛЁВА' && name = 'ЮЛИЯ';
