@@ -1,0 +1,91 @@
+.button
+{
+    display: block;
+    width: 1fr;
+    height: 50px;
+    text-decoration: none;
+    text-align: center;
+    text-indent: 24.5px;
+    font: 19px/52px Georgia; 
+    color: #333333;
+    background: rgba(0, 0, 0, 0) url("../img/about_me_icon2.png") no-repeat 30px 17px;
+}
+.button:hover,
+.button:focus
+{
+    color: aliceblue;
+    background-image: url("../img/about_me_icon.png");
+    background-color: #15a98c;
+}
+
+.button_hobby
+{
+    text-indent: 25px;
+    background: rgba(0, 0, 0, 0) url("../img/hobby_icon.png") no-repeat 30px 18px;
+}
+.button_hobby:hover,
+.button_hobby:focus
+{
+    background-image: url("../img/hobby_icon2.png");
+}
+
+.button_video
+{
+    text-indent: 25px;
+    background: rgba(0, 0, 0, 0) url("../img/video_icon.png") no-repeat 30px 17px;
+}
+.button_video:hover,
+.button_video:focus
+{
+    background-image: url("../img/video_icon2.png");
+}
+
+
+.center_button_films
+{
+    margin: 54px auto;
+    width: 241px;
+    height: 50px;
+}
+.button_films
+{
+    display: block;
+    margin: 0 0 0 0;
+    text-indent: 0;
+    width: 220px;
+    height: 50px;
+    border-radius: 5px;
+    background-image: unset;
+    background-color: #15a98c;
+    color: white;
+    line-height: 49px;
+}
+.button_films:hover,
+.button_films:focus
+{
+    background-image: none;
+}
+.button_sent
+{
+    margin: 35px auto;
+    text-indent: unset;
+    line-height: 40px;
+    width: 220px;
+    height: 50px;
+    border-radius: 5px;
+    background-image: none;
+    background-color: #15a98c;
+    color: white; 
+    border: none;
+}
+.button_sent:hover,
+.button_sent:focus
+{
+    background-image: none;
+}
+
+
+
+
+
+

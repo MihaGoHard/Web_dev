@@ -1,0 +1,333 @@
+@media screen and (min-width: 480px)
+{
+    .main
+    {   
+        grid-template-columns: auto auto auto;
+        grid-template-areas:
+        " . top_navigation . "
+        " . top_content . "
+        " . content_block . "
+        " films_block films_block films_block"
+        " . forms_block . "
+        "footer footer footer";
+    }
+
+    .button
+    {
+        width: 140px;
+        height: 50px;
+        background-position: 21px 17px;
+    }
+    .button_hobby
+    {
+        width: 161px;
+        text-indent: 25px;
+        background-position: 19px 18px;
+    }
+    .button_video
+    {
+        width: 234px;
+        text-indent: 25px;
+        background-position: 19px 17px;
+    }
+    .button_films,.button_sent
+    {
+        width: 220px;
+        height: 50px;
+    } 
+
+    .top_navigation
+    {
+        flex-flow: row wrap;
+        justify-content: space-around;
+    }
+
+    .blockquote_text 
+    {
+        min-width: 440px;
+    } 
+    
+    .lists_block
+    {
+        max-width: 565px
+    }
+
+    .film_column
+    {
+        max-width: 280px;
+    }
+
+    .form_window
+    {
+        max-width: 440px;
+    }
+
+    .form_feel
+    {
+        width: 400px;
+    }  
+    
+    .form_feel_select
+    {
+        width: 435px;
+        background-position-x: 388px;
+    }
+
+    .gender
+    {
+        margin: 41px auto 0 0;
+    }
+
+}
+
+
+@media screen and (min-width: 768px)
+{    
+    .films_articles_block
+    {
+        padding: 0;
+        max-width: 1000px;
+        justify-content: space-around;
+    }   
+    
+    .film_column
+    {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
+    .forms_head_text::before
+    {
+        display: block;
+        position: absolute;
+        top: 21px;
+        right: 285px;
+        content: "";
+        width: 200px;
+        height: 1px;
+        background: url("../img/line-left.png") no-repeat;
+    }
+    .forms_head_text::after
+    {
+        display: block;
+        position: absolute;
+        top: 21px;
+        left: 270px;
+        content: "";
+        width: 200px;
+        height: 1px;
+        background: url("../img/line-right.png") no-repeat;
+    }
+
+    .form_window
+    {
+        max-width: 540px;
+    }
+
+    .form_feel
+    {
+        width: 505px;
+    }  
+    
+    .form_feel_select
+    {
+        width: 540px;
+        background-position: 498px 18px;
+    }  
+
+    .button_sent
+    {
+        margin-left: 0;
+    }  
+}
+
+
+@media screen and (min-width: 1024px)
+{
+    .main
+    {   
+        grid-template-columns: auto auto auto auto auto;
+        grid-template-areas:
+        " . . top_navigation . . "
+        " . . top_content . . "
+        " . . content_block . . "
+        " films_block films_block films_block films_block films_block "
+        " . . forms_block . . "
+        "footer footer footer footer footer";
+    }
+
+    .top_navigation
+    {
+        justify-content: start;
+        max-width: 960px;
+    }
+
+    .top_content
+    {
+        min-width: 830px;
+        max-width: 960px;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .blockquote_block
+    {
+        max-width: 500px;
+    }
+
+    .blockquote_text,.blockquote_author
+    {
+        color: #ffffff;
+    }
+
+    .main_head
+    {
+        margin: 74px 0 0 1px;
+    }
+    .main_head:after
+    {
+        margin: 31px 0 0 -4px;
+        width: 60px;
+    }
+
+    .main_background
+    {
+        grid-area: 2 / 1 / 3 / 6;
+
+    }
+
+    .content_block
+    {
+        flex-direction: row;
+        padding: 0;
+        justify-content: space-between;
+        max-width: 961px;
+    }
+
+    .lists_block    
+    {
+        padding: 0;
+        max-width: 330px;
+        margin-top: 0;
+    }
+
+    .inform_block
+    {
+        max-width: 520px;
+    }
+
+    .inform_block_second_head
+    {
+        margin: 25px 0 0 10px;
+    }
+
+    .letter
+    {
+        margin: 38px 0 0 10px;
+    }
+
+    .film_column
+    {
+        padding: 0;
+        max-width: 400px;
+    }  
+
+}
+
+@media screen and (min-width: 1366px)
+{
+    .main
+    {   
+        grid-template-columns: auto auto 960px auto auto;
+    }
+
+    .top_content
+    {
+        justify-content: unset;
+        align-items: unset;
+    }
+
+    .blockquote_block
+    {
+        max-width: 530px;
+        margin: 25px 0 0 63px;
+        padding: 0;
+    }
+
+    .blockquote_text
+    {
+        margin: 0;
+    }
+
+    .lists_block
+    {
+        max-width: 390px;
+    }
+
+    .first_list
+    {
+        margin-top: 25px;
+    }
+
+    .second_list
+    {
+        margin-top: 21px;
+    }
+
+    .content_block
+    {
+        justify-content: unset;
+    }
+
+    .inform_block
+    {
+        max-width: 565px;
+
+    }
+
+    .inform_block_text
+    {
+        padding: 0;
+    }
+
+    .inform_block_second_head
+    {
+        margin: 23px 0 0 0;
+    }
+
+    .letter
+    {
+        margin-left: 0;
+    }
+
+    .films_background
+    {
+        margin-top: 0;
+    }    
+
+    .films_articles_block
+    {
+        flex-direction: row;
+        justify-content: space-between;
+        margin: 32px 0 0 0;
+        max-width: unset;
+        width: 1200px;
+    }
+
+    .film_header
+    {
+        margin: 0;
+    }
+
+    .film_column
+    {
+        margin: 0;
+        max-width: 285px;
+    }
+
+    .forms_block
+    {
+        width: 600px;
+    }
+}
+

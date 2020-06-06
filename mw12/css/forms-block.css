@@ -1,0 +1,115 @@
+.forms_head_text
+{
+    display: block;
+    position: relative;
+    text-indent: -1px;
+    max-width: 257px;
+    min-height: 40px;
+    margin: 0 auto;
+    font: 300 36px/42px "Open Sans";
+    color: #333333;
+}
+
+.form_window
+{
+    display: flex;
+    flex-direction: column;
+    margin: 68px 0px 0 0;
+    max-width: 340px;
+    min-height: 85px;
+}
+.form_window_email
+{
+    margin-top: 5.5px;
+}
+.form_window_country
+{
+    margin-top: 7px;
+}
+
+.form_feel
+{
+    display: block;
+    margin: 3px 0 0 1px;
+    padding: 11.5px;
+    padding-left: 20px;
+    border-radius: 3px;
+    border: 2px solid #c9c9c9;
+    font-size: 20px;
+    outline: unset;
+}
+.form_feel:active,
+.form_feel:focus
+{
+    border-color: #21d1ae;
+}
+
+.form_feel_select
+{
+    margin-top: 4px;
+    padding: 6px 7px 8px 16px;
+    font: 400 18px/32px "Open Sans"; 
+    color: #555555;    
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: url("../img/arrow_down.png") no-repeat 290px 20px;
+}
+
+.form_feel_textarea
+{
+    overflow: auto;
+    width: 300px;
+    height: 122px;
+    resize: none; 
+}
+
+.form_name
+{
+    font: 400 20px/32px "Open Sans";
+    color: #333333;
+}
+.form_name_marked
+{
+    font: 400 20px/32px "Open Sans";
+    color: #333333;
+}
+.form_name_marked::after
+{
+    content: " *";
+    color: red;
+}
+
+.gender_name
+{
+    display: block;
+    font: 400 20px/32px "Open Sans";
+    color: #333333;
+}
+.gender
+{
+    max-width: 340px;
+    height: 80px;
+    margin: 42px auto 0;
+}
+
+.gender_choice
+{
+    display: block;
+    margin: 5px 4px 0 -4px;
+    width: 140px;
+    height: 30px;
+    float: left;
+    font: 400 18px/32px "Open Sans";
+    color: #333333;
+}
+
+.text_area
+{
+    height: 200px;
+    margin: 24.5px auto 0 0;
+}
+
+
+
+
