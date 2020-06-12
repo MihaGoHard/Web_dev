@@ -1,0 +1,30 @@
+.main
+{
+    display: grid;
+    width: 1368px;
+    height: 900px;
+    margin: 0 auto;
+    grid-template-columns:1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+        " . . . "
+        " . canvas . "
+        " . svg . "
+        " . . . ";
+    align-items: center;
+    grid-gap: 10px                 
+}
+
+.picture
+{
+    display: block;
+    grid-area: canvas;
+    border: 3px solid black;  
+}
+
+.svg_picture
+{
+    display: block;
+    grid-area: svg;
+    border: 3px solid black;
+}

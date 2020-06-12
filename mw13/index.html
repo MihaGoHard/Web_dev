@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <title>AnDzanDzan</title>
+    <script src="./js/kenny.js" defer></script>
+    <script src="./js/erick.js" defer></script>
+    <script src="./js/draw.js" defer></script>
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+    <div class="main">
+      <canvas class="picture" id="myCanvas" width="820px" height="260px"></canvas>
+      <svg class="svg_picture" xmlns="http://www.w3.org/2000/svg" version="1.1" 
+        width="820px" height="260px">
+        <!--Stan-->
+        <path id="stan_legs" d="M 284.5, 242 H 385 V 218 H 284.5 z" fill="#3a71c1"/>
+        <path id="stan_body" d="M 277 223 C 300 232, 362 232, 385 223 L 398 210 C 398 200, 391 170, 378 160 H 284 C 276 170, 269 180, 264 205 H 280 z" fill="#d57162"/> 
+        <path id="stan_boots" d="M 273 244 Q 295 234, 335 240 Q 375 236, 393 244 z" fill="#302d34"/> 
+        <path id="stan_collar" d="M 286 162 C 305 189, 333 187, 333 185 C 334 187, 356 193, 380 167 Q 382 162, 373 162 C 365 170, 337 170, 332 182 L 325 170 z" fill="#fe1e40" stroke="#30292e" stroke-width="0.2"/>      
+       
+        <ellipse id="stan_left_hand" cx="274" cy="214" rx="12" ry="11" transform="rotate(130 275 212)" fill="#ff1f41" stroke="#30292e" stroke-width="0.2"/>
+        <circle id="stan_left_hand_finger" cx="282" cy="207" r="5" fill="#ff1f41" stroke="#30292e" stroke-width="0.2"/>
+        <path id="stan_left_hand_line" d="M 284 202 Q 286 190, 287 187" stroke-width="0.4" stroke="#30292e"/>
+        <circle id="stan_right_hand" cx="389" cy="213" r="11" fill="#ff1f41" stroke="#30292e" stroke-width="0.2"/>
+        <circle id="stan_right_hand_finger" cx="380" cy="210" r="5" fill="#ff1f41" stroke="#30292e" stroke-width="0.2"/>
+        <path id=stan_right_hand_line d="M 378 205 Q 377 190, 376 189" stroke-width="0.4" stroke="#30292e"/>
+
+        <path id="stan_clasp" d="M 333 186 L 332 230" stroke="#30292e"/>
+        <circle id="stan_button" cx="327" cy="190.5" r="1.5" fill="#30292e"/>
+        <circle id="stan_button" cx="326" cy="205" r="1.7" fill="#30292e"/>
+        <circle id="stan_button" cx="326" cy="221" r="1.7" fill="#30292e"/>
+
+        <path id="stan_face" d="M 258 92 C 255 205, 407 207, 404 92 L 380 80 z" fill="#ffe0b1" stroke-width="0.1" stroke="#30292e"/>
+        <path id="stan_cap" d="M 259 92 C 275 8, 384 7, 403 92 L 380 80 z" fill="#3770bf"/>
+        <path id="stan_cap_line" d="M 256 102 Q 325 80, 404 96 L 404 81 Q 325 60, 256 88 z" fill="#ff1f41"/>
+      
+        <ellipse id="stan_left_eye" cx="311" cy="114" rx="20" ry="23" transform="rotate(28 311 114)" fill="#ffffff"/>
+        <circle id="stan_left_eye_point" cx="318" cy="114" r="2.5" fill="#30292e"/>
+        <path id="stan_left_eye_overline" d="M 303 94.5 C 314 89, 328 92, 331 105" fill="none" stroke-width="0.1" stroke="#30292e"/>
+        <ellipse id="stan_right_eye" cx="352" cy="113" rx="19" ry="23" transform="rotate(-28 352 113)" fill="#ffffff"/>
+        <circle id="stan_right_eye_point" cx="342" cy="113" r="2.5" fill="#30292e"/>
+        <path id="stan_right_eye_overline" d="M 332 105 C 335 90, 359 82, 370.5 107" fill="none" stroke-width="0.1" stroke="#30292e"/>
+        <rect id="stan_left_eyebrow" x="374" y="95" width="24" height="2" rx="1" ry="100" transform="rotate(216 374 95)" fill="#682a37"/>
+        <rect id="stan_right_eyebrow" x="282" y="96" width="24" height="2" rx="1" ry="100" transform="rotate(317 282 96)" fill="#682a37"/>
+
+        <path id="stan_nose" d="M 332 104 Q 330 105 ,332 114" fill="rgba(0, 0, 0, 0.5)" stroke="rgba(0, 0, 0, 0.3)"/>
+        <path id="stan_mouth" d="M 314 151 Q 322 160, 335 167.5 Q 346 161, 356 150 Q 330 149, 314 151 z" fill="#30292e"/>
+        <path id="stan_teeth" d="M 319 152.6 Q 330 151, 352 152 L 346 157 L 321 156 L 319 154 z" fill="#fffffb"/>
+        <line id="stan_teeth_line" x1="326" y1="150.5" x2="326" y2="157" stroke="#30292e"/>
+        <line id="stan_teeth_line" x1="335" y1="150.5" x2="334.8" y2="158" stroke="#30292e"/>
+        <line id="stan_teeth_line" x1="326" y1="150.5" x2="326" y2="157" stroke="#30292e"/>
+        <line id="stan_teeth_line" x1="346" y1="150" x2="343" y2="158" stroke="#30292e"/>
+
+        <rect id="ball_part" x="306" y="28" width="34" height="3" rx="2" ry="100" transform="rotate(42 323 29.5)" fill="#f12644" stroke-width="0.4" stroke="#30292e"/>  
+        <rect id="ball_part" x="306" y="28" width="34" height="3" rx="2" ry="100" transform="rotate(65 323 29.5)" fill="#f12644" stroke-width="0.4" stroke="#30292e"/>  
+        <rect id="ball_part" x="306" y="28" width="34" height="3" rx="2" ry="100" transform="rotate(87 323 29.5)" fill="#f12644" stroke-width="0.4" stroke="#30292e"/>  
+        <rect id="ball_part" x="306" y="28" width="34" height="3" rx="2" ry="100" transform="rotate(109 323 29.5)" fill="#f12644" stroke-width="0.4" stroke="#30292e"/>  
+        <rect id="ball_part" x="306" y="28" width="34" height="3" rx="2" ry="100" transform="rotate(135 323 29.5)" fill="#f12644" stroke-width="0.4" stroke="#30292e"/>  
+        <rect id="ball_part" x="306" y="28" width="34" height="3" rx="2" ry="100" transform="rotate(152 323 29.5)" fill="#f12644" stroke-width="0.4" stroke="#30292e"/>  
+        <rect id="ball_part" x="306" y="28" width="34" height="3" rx="2" ry="100" transform="rotate(178 323 29.5)" fill="#f12644" stroke-width="0.4" stroke="#30292e"/>  
+        <rect id="ball_part" x="306" y="28" width="34" height="3" rx="2" ry="100" transform="rotate(200 323 29.5)" fill="#f12644" stroke-width="0.4" stroke="#30292e"/>  
+              
+        <!--Kyle-->
+        <path id="kyle_legs" d="M 535, 246 H 632.5 V 218 H 535 z" fill="#207c79"/>
+        <path id="kyle_body" d="M 512 213 C 550 245, 633 236, 653.5 218 C 653 195, 642 170, 627 155 L 538 157 C 530 166, 515 180, 512 213" fill="#ff6117"/> 
+        <path id="kyle_boots" d="M 528 246 C 560 242, 590 242, 642 245 V 247 C 645 250, 560 249, 528 248 z" fill="#3f3e43"/> 
+        
+        <ellipse id="kyle_left_hand" cx="522" cy="215" rx="12" ry="13" fill="#4fc442" stroke="#30292e" stroke-width="0.2"/>
+        <circle id="kyle_left_hand_finger" cx="530" cy="212" r="5" fill="#4fc442" stroke="#30292e" stroke-width="0.2"/>
+        <path id="kyle_left_hand_line" d="M 533 208 Q 533 200, 537.5 191" stroke-width="0.4" stroke="#30292e"/>
+        <circle id="kyle_right_hand" cx="643.5" cy="219.5" r="12.5" fill="#4fc442" stroke="#30292e" stroke-width="0.2"/>
+        <circle id="kyle_right_hand_finger" cx="635" cy="216" r="5" fill="#4fc442" stroke="#30292e" stroke-width="0.2"/>
+        <path id="kyle_right_hand_line" d="M 632 212 Q 633 205, 630 191" stroke-width="0.4" stroke="#30292e"/>
+
+        <path id="kyle_clasp" d="M 585.5 183.5 V 234" stroke="#322b32"/>
+        <path id="kyle_clasp" d="M 585.5 183.5 V 234" stroke-width="3" stroke="rgba(0, 0, 0, 0.4)"/>
+        <path id="kyle_collar" d="M 534 162 C 545 175, 583 190, 587 182 C 591 189, 637 175, 635 157 z" fill="#03b150" stroke="#30292e" stroke-width="0.2"/>
+                
+        <rect id="kyle_left_bag" x="552" y="192" width="19" height="23" fill="none" stroke-width="1.5" stroke="#37190d"/> 
+        <path id="kyle_left_bag_line" d="M 552 192 L 562 204 L 571 192" fill="none" stroke-width="1.3" stroke="#37190d"/>      
+        <rect id="kyle_right_bag" x="598.5" y="190.5" width="19" height="23" fill="none" stroke-width="1.5" stroke="#37190d"/> 
+        <path id="kyle_right_bag_line" d="M 598.5 190.5 L 608 202 L 618 190.5" fill="none" stroke-width="1.3" stroke="#37190d"/>      
+  
+        <rect id="kyle_back_cap_side" x="512" y="21" width="145" rx="15" height="70" fill="#49c436" stroke-width="0.5" stroke="#322b32"/>
+        <path id="kyle_face" d="M 512 80 V 127 C 530 191, 630 201, 656 127 V 80 z" fill="#ffe0b1" stroke-width="0.2" stroke="#322b32"/>
+        <ellipse id="kyle_left_cap_ear" cx="509" cy="107" rx="13" ry="36" transform="rotate(20 509 107)"  fill="#4ec63e" stroke="#30292e" stroke-width="0.5"/>
+        <ellipse id="kyle_right_cap_ear" cx="660" cy="109" rx="13" ry="36" transform="rotate(-20 660 109)" fill="#48c53d" stroke="#30292e" stroke-width="0.5"/>
+        <path id="kyle_front_cap_side" d="M 521.5 48.5 V 90 Q 585 74,648 90 V 48.5 z" fill="#00ae4f"/>
+ 
+        <path id="kyle_mouth" d="M 563 149 Q 575 160, 588 169 C 596 160, 607 158, 610 149 Q 590 148, 563 149" fill="#322b32"/>
+        <path id="kyle_teeth" d="M 568 150 C 575 152, 585 148, 607 150 Q 606 153, 600 157 Q 585 156, 573 156 Q 569 153, 568 150" fill="#feffff"/>
+        <line id="kyle_teeth_line" x1="578" y1="149" x2="577" y2="157" stroke-width="1.2" stroke="#30292e"/>
+        <line id="kyle_teeth_line" x1="588" y1="149" x2="588" y2="158" stroke-width="1.2" stroke="#30292e"/>
+        <line id="kyle_teeth_line" x1="599" y1="149" x2="597" y2="157" stroke-width="1.2" stroke="#30292e"/>
+
+        <ellipse id="kyle_left_eye" cx="563" cy="109" rx="20" ry="25" transform="rotate(29 563 109)" fill="#ffffff"/>
+        <circle id="kyle_left_eye_point" cx="570.5" cy="110" r="2.5" fill="#30292e"/>
+        <path id="kyle_left_eye_overline" d="M 550 93 C 565 78, 584 85, 585 105" fill="none" stroke-width="0.1" stroke="#30292e"/>
+        <ellipse id="kyle_right_eye" cx="606.5" cy="109" rx="20" ry="25" transform="rotate(-28 606.5 109)"  fill="#ffffff" />
+        <circle id="kyle_right_eye_point" cx="595" cy="110" r="2.5" fill="#30292e"/>
+        <path id="stan_right_eye_overline" d="M 585 103 C 589 77, 619 81, 627 105" fill="none" stroke-width="0.1" stroke="#30292e"/>
+        <rect id="kyle_left_eyebrow" x="563" y="75" width="23" height="3" rx="1" ry="100" transform="rotate(148 563 75)" fill="#322b32"/>
+        <rect id="kyle_right_eyebrow" x="605" y="74" width="23" height="3" rx="1" ry="100" transform="rotate(27 605 74)" fill="#322b32"/>
+
+        <path id="kyle_nose" d="M 586 100 Q 583 106, 585 111" stroke-width="0.6" fill="rgba(0, 0, 0, 0.5)" stroke="rgba(0, 0, 0, 0.3)"/>
+      </svg>    
+    </div>
+  </body>    
+</html>
