@@ -1,14 +1,14 @@
 .button
 {
     display: block;
-    width: 1fr;
+    width: 140px;
     height: 50px;
     text-decoration: none;
     text-align: center;
     text-indent: 24.5px;
     font: 19px/52px Georgia; 
     color: #333333;
-    background: rgba(0, 0, 0, 0) url("../img/about_me_icon2.png") no-repeat 30px 17px;
+    background: rgba(0, 0, 0, 0) url("../img/about_me_icon2.png") no-repeat 21px 17px;
 }
 .button:hover,
 .button:focus
@@ -20,8 +20,9 @@
 
 .button_hobby
 {
+    width: 161px;
     text-indent: 25px;
-    background: rgba(0, 0, 0, 0) url("../img/hobby_icon.png") no-repeat 30px 18px;
+    background: rgba(0, 0, 0, 0) url("../img/hobby_icon.png") no-repeat 19px 18px;;
 }
 .button_hobby:hover,
 .button_hobby:focus
@@ -31,8 +32,9 @@
 
 .button_video
 {
+    width: 234px;
     text-indent: 25px;
-    background: rgba(0, 0, 0, 0) url("../img/video_icon.png") no-repeat 30px 17px;
+    background: rgba(0, 0, 0, 0) url("../img/video_icon.png") no-repeat 19px 17px;
 }
 .button_video:hover,
 .button_video:focus
@@ -47,6 +49,7 @@
     width: 241px;
     height: 50px;
 }
+
 .button_films
 {
     display: block;
@@ -65,6 +68,7 @@
 {
     background-image: none;
 }
+
 .button_sent
 {
     margin: 35px auto;
