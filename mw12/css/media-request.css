@@ -126,7 +126,7 @@
 {
     .main
     {   
-        grid-template-columns: auto auto auto auto auto;
+        grid-template-columns: auto auto 960px auto auto;
         grid-template-areas:
         " . . top_navigation . . "
         " . . top_content . . "
@@ -233,7 +233,7 @@
     .films_block
     {
         max-width: unset;
-        width: 926px;
+        width: 960px;
     }  
     
     .films_articles_block
@@ -267,11 +267,6 @@
 
 @media screen and (min-width: 1366px)
 {
-    .main
-    {   
-        grid-template-columns: auto auto 960px auto auto;
-    }
-
     .top_content
     {
         justify-content: unset;
