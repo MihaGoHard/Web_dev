@@ -12,10 +12,39 @@
         "footer footer footer";
     }
 
+    .top_navigation
+    {
+        align-items: center;
+    }
+
+    .button
+    {
+        max-width: unset;
+        width: 480px;
+        text-align: center;
+        text-indent: 24.5px;
+        background-position: 190px 17px;
+    }
+
+    .button_hobby
+    {
+        width: 480px;
+        text-indent: 25px;
+        background-position: 182px 18px;
+    }
+
+    .button_video
+    {
+        width: 480px;
+        text-indent: 25px;
+        background-position: 145px 17px;
+    }
+
     .button_films,.button_sent
     {
         width: 220px;
         height: 50px;
+        text-indent: 0;
     } 
 
     .blockquote_text 
@@ -69,6 +98,24 @@
         flex-flow: row wrap;   
     }
 
+    .button
+    {
+        width: 140px;
+        background-position-x: 21px;
+    }
+
+    .button_hobby
+    {
+        width: 161px;
+        background-position-x: 19px;
+    }
+
+    .button_video
+    {
+        width: 234px;
+        background-position-x: 19px;
+    }
+
     .films_articles_block
     {
         padding: 0;
@@ -119,6 +166,13 @@
         width: 540px;
         background-position: 498px 18px;
     }  
+
+    .button_films,.button_sent
+    {
+        width: 220px;
+        height: 50px;
+        text-indent: 0;
+    } 
 }
 
 
@@ -239,6 +293,8 @@
     .films_articles_block
     {
         max-width: none;
+        width: 880px;
+        align-self: center;
     }
 
     .film_column
@@ -253,6 +309,11 @@
         text-align: unset;
         text-indent: -2px;
     }
+
+    .forms_block
+    {
+        padding: 5px;
+    }    
 
     .button_sent
     {

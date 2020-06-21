@@ -1,11 +1,10 @@
 .button
 {
     display: block;
-    width: 140px;
+    max-width: 480px;
     height: 50px;
     text-decoration: none;
-    text-align: center;
-    text-indent: 24.5px;
+    text-indent: 53px;
     font: 19px/52px Georgia; 
     color: #333333;
     background: rgba(0, 0, 0, 0) url("../img/about_me_icon2.png") no-repeat 21px 17px;
@@ -20,9 +19,7 @@
 
 .button_hobby
 {
-    width: 161px;
-    text-indent: 25px;
-    background: rgba(0, 0, 0, 0) url("../img/hobby_icon.png") no-repeat 19px 18px;;
+    background: rgba(0, 0, 0, 0) url("../img/hobby_icon.png") no-repeat 19px 18px;
 }
 .button_hobby:hover,
 .button_hobby:focus
@@ -32,8 +29,6 @@
 
 .button_video
 {
-    width: 234px;
-    text-indent: 25px;
     background: rgba(0, 0, 0, 0) url("../img/video_icon.png") no-repeat 19px 17px;
 }
 .button_video:hover,
@@ -54,6 +49,7 @@
 {
     display: block;
     margin: 0 0 0 0;
+    text-align: center;
     text-indent: 0;
     width: 220px;
     height: 50px;

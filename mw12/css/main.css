@@ -24,7 +24,6 @@ body
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
     grid-area: top_navigation;
     list-style: none;
     width: 100%;
@@ -96,11 +95,10 @@ body
     display: flex;
     margin-top: 40px;
     grid-area: forms_block;
-    padding: 10px;
+    padding: 12px;
     flex-direction: column;
     justify-self: center;
     align-items: center;
-    padding: 5px;
 }
 
 .footer

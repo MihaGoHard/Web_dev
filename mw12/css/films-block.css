@@ -19,9 +19,14 @@
 .film_column
 {
     display: block;
-    margin-top: 45px;
+    margin-top: 100px;
     max-width: 450px;
     padding: 12px;
+}
+
+.film_column_first
+{
+    margin-top: 50px
 }
 
 .image
