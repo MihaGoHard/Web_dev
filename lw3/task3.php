@@ -1,6 +1,17 @@
 <?php                                                      	
 header("Content-Type: text/plain");
-include 'functions.php';
+require_once('functions.php');
+
+function getRepeatsCount(string $str): string
+{
+    $arrStr = str_split($str);                  
+    sort($arrStr);                              
+    $sortStr = implode($arrStr);                
+    preg_match_all('/(.)\1+/', $sortStr, $num); 
+    $num = implode($num[0]);                    
+    return strlen($num);                         
+}
+
 
 function addDataToFile(array $userData, string $fileAddres)
 {
