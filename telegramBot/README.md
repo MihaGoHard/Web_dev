@@ -11,10 +11,10 @@
        -request.php  
        -tesponse.php  
   * ### common.inc.php  
-##   
-* composer.json  
-* index.php  
-* sent.php    
+   
+composer.json  
+index.php  
+sent.php    
 ## README.DM    
 
      
