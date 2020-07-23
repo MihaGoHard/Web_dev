@@ -9,7 +9,7 @@
        -buttons_answer.php  
        -database.php  
        -request.php  
-       -tesponse.php  
+       -response.php  
    * ### common.inc.php    
 ##
    
