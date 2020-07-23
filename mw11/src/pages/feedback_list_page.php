@@ -14,6 +14,7 @@ function searchUserData()
                                      email = ${email}      
                                ");                     
         $response = $response->fetchAll();
+       
          
         if ($response != null)
         { 

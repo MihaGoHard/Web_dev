@@ -12,7 +12,6 @@ function getRepeatsCount(string $str): string
     return strlen($num);                         
 }
 
-
 function addDataToFile(array $userData, string $fileAddres)
 {
     $convertData = serialize($userData);    // сериализация 
