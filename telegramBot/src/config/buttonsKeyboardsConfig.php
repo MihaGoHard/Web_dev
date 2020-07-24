@@ -1,36 +1,23 @@
 <?php
-const OIL_CODE = 'BZ=F';
-const GAS_CODE = 'NG';
-const SILVER_CODE = 'SI=F';
-const GOLD_CODE = 'GC=F';
-const PLATINUM_CODE = 'PL=F';
-
 const TIME_BUTTON = 'time_button';
 const UPDATE_BUTTON = 'update_button';
 const DESCRIBE_BUTTON = 'describe_button';
 const SUBSCRIBE_BUTTON = 'subscribe_button';
-const START_TIME = 'start_time';
-
+const LOOK_ONCE_BUTTON = 'look_once';
+const LOOK_NOW_BUTTON = 'look_now';
+const START_COMMAND = '/start';
 const TIME_ARR = array ( '0', '1', '2', '3', '4', '5',
                          '6', '7', '8', '9', '10', '11',
                          '12', '13', '14', '15', '16', '17',
                          '18', '19', '20', '21', '22', '23');
 
-const DESCRIBE_MESSAGE_TEXT = 'НАЧАТЬ: /start  ';
-
-const TOKEN = '*******************';
-const DB_DSN = "mysql:host=us-cdbr-east-02.cleardb.com;dbname=heroku_eac8c10b5a4f27b;charset=UTF8";
-const DB_USER = "****";
-const DB_PASSWORD = "****";
-
-const START_KEYBOARD_TEXT = 'ПОЛУЧАЙТЕ АКТУАЛЬНУЮ ИНФОРМАЦИЮ О МИРОВЫХ ЦЕНАХ НА НЕФТЬ, ГАЗ, ЗОЛОТО, СЕРЕБРО И ПЛАТИНУ';
 const START_KEYBOARD = [
     'inline_keyboard' => [
         [
-            ['text' => 'ПОДПИСАТЬСЯ', 'callback_data' => 'pressed_subscribe'],
+            ['text' => 'Подписаться', 'callback_data' => SUBSCRIBE_BUTTON],
         ],
         [
-            ['text' => 'посмотреть без подписки', 'callback_data' => 'look_once']
+            ['text' => 'Посмотреть без подписки', 'callback_data' => LOOK_ONCE_BUTTON]
         ]
     ]
 ];
@@ -38,18 +25,17 @@ const START_KEYBOARD = [
 const UPDATE_DESCRIBE_KEYBOARD = [
     'inline_keyboard' => [
         [
-            ['text' => 'ИЗМЕНИТЬ ВРЕМЯ ОПОВЕЩЕНИЯ', 'callback_data' => 'update_time']
+            ['text' => 'Изменить время оповещения', 'callback_data' => UPDATE_BUTTON]
         ],
         [
-            ['text' => 'ПОСМОТРЕТЬ ИНФОРМАЦИЮ СЕЙЧАС', 'callback_data' => 'looking_now']
+            ['text' => 'Посмотреть информацию сейчас', 'callback_data' => LOOK_NOW_BUTTON]
         ],
         [
-            ['text' => 'отменить подписку', 'callback_data' => 'dislike_describe']
+            ['text' => 'Отменить подписку', 'callback_data' => DESCRIBE_BUTTON]
         ]
     ]
 ];
 
-const TIME_KEYBOARD_TEXT = 'ВЫБЕРИТЕ ВРЕМЯ, КОГДА ХОТИТЕ ПОЛУЧАТЬ ИНФОРМАЦИЮ';
 const TIME_KEYBOARD =  [
    'inline_keyboard' => [
         [

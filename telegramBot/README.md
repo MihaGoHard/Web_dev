@@ -1,21 +1,23 @@
 # telegramBot
 ## src  
    * config  
-      -config.php  
+       -apiDbCodesConfig.php  
+       -buttonsKeyboardsConfig.php  
+       -textMistakeOffsetConfig.php  
    * shema  
-        -database.sql  
+       -database.sql  
    * utils  
-       -api_works.php  
-       -buttons_answer.php  
+       -checkingUserCommand.php  
+       -createSendAnswerToUser.php  
        -database.php  
-       -request.php  
-       -response.php  
+       -processAnswerFromUser.php  
+       -processOtherServiceInfo.php  
    * ### common.inc.php    
 ##
    
 composer.json  
 index.php  
-sent.php    
+send.php    
 ## README.DM    
 
      

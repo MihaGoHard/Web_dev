@@ -1,9 +1,17 @@
 <?php
-function getInfoByCodeFromApi(string $code): string
+function getInfoByCodeFromApi(string $resourceCode): string
 {
-    $apiJson = file_get_contents('https://query1.finance.yahoo.com/v10/finance/quoteSummary/' . $code . '?modules=price');
-    $apiArr = json_decode(($apiJson), true);
-    return $apiArr['quoteSummary']['result'][0]['price']['regularMarketPrice']['raw'];
+    $apiJson = file_get_contents(FINANCE_URL_WITHOUT_PARAMS . $resourceCode . FINANCE_URL_MODULE);
+    if ($apiJson != null)
+    {
+        $apiArr = json_decode(($apiJson), 1);
+        $info = $apiArr['quoteSummary']['result'][0]['price']['regularMarketPrice']['raw'];
+    }
+    else
+    {
+        $info = JSON_MISTAKE;
+    }
+    return $info;
 }
 
 function getFuturesInfo(): string
@@ -22,12 +30,12 @@ function getFuturesInfo(): string
 
 function getSyncHour(): int
 {
-     date_default_timezone_set('UTC');
-     $hour = (int)date('H') + 3;
+     date_default_timezone_set('Etc/GMT-3');
+     $hour = (int)date('H') ;
      $minutes = (int)date('i');
-     if (($minutes === 57) || ($minutes === 58) || ($minutes === 59))
+     if (in_array($minutes, MINUTES_FOR_HOUR_INC))
      {
-         $hour = $hour + 1;
+         $hour === HOUR_FOR_HOUR_RESET ? $hour = 0 : ++$hour;
      }
      return $hour;
 }

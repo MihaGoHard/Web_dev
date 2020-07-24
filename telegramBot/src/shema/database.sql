@@ -1,4 +1,4 @@
-USE heroku_dddd;
+USE heroku_eac8c10b5a4f27b;
 CREATE TABLE chat_info
 (
     main_id               INT AUTO_INCREMENT  NOT NULL,
@@ -14,4 +14,5 @@ CREATE TABLE chat_info
   ENGINE = InnoDB
 ;
 
-
+mysql -u b762538bfdc7ec -p90516cda -h us-cdbr-east-02.cleardb.com
+TRUNCATE TABLE chat_info;

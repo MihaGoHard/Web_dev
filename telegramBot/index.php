@@ -3,16 +3,27 @@ require_once('src/common.inc.php');
 
 if (checkPostMethod())
 {
-    $fullRequestArr = getUserRequestArr();
-    $chatId = getUserRequestParam('chat_id');
-    $userMessage = getUserRequestParam('user_message');
-    $userButtonAnswer = getUserRequestParam( 'user_button_answer');
+    $chatId = getUserRequestParam(CHAT_ID);
+    $userMessage = getUserRequestParam(USER_MESSAGE_ANSWER);
+    $userButtonAnswer = getUserRequestParam( USER_BUTTON_ANSWER);
 
     if (sendedStart($userMessage))
     {
-        checkChatInDb($chatId) ? resetButtons($chatId) : createNewChatInDb($fullRequestArr);
+        checkChatInDb($chatId) ? resetButtons($chatId) : createNewChatInDb();
         createParamsSendKeyboard($chatId, START_KEYBOARD_TEXT, START_KEYBOARD);
         invertDbButtonState($chatId, SUBSCRIBE_BUTTON);
+    }
+
+    if (!checkCallback() && !sendedStart($userMessage))
+    {
+       if(checkChatInDb($chatId) && checkSubscribe($chatId))
+       {
+           createParamsSendKeyboard($chatId, WRONG_COMMAND_TEXT, UPDATE_DESCRIBE_KEYBOARD);
+       }
+       if(!checkChatInDb($chatId) || (checkChatInDb($chatId) && !checkSubscribe($chatId)))
+       {
+           createParamsSendMessage($chatId, DESCRIBE_MESSAGE_TEXT);
+       }
     }
 
     if (pressedSubscribe($userButtonAnswer) && isInStateOne($chatId, SUBSCRIBE_BUTTON))
@@ -34,11 +45,11 @@ if (checkPostMethod())
         createParamsSendKeyboard($chatId, $mainInfo, UPDATE_DESCRIBE_KEYBOARD);
     }
 
-    if (in_array($userButtonAnswer, TIME_ARR) && isInStateOne($chatId, TIME_BUTTON))
+    if (pressedTimeButton($userButtonAnswer) && isInStateOne($chatId, TIME_BUTTON))
     {
         setChatNoteTime($chatId, $userButtonAnswer);
-        $nodeMessageText = 'ИНФОРМАЦИЯ ПОСТУПИТ В ' . $userButtonAnswer . ':00';
-        createParamsSendKeyboard($chatId, $nodeMessageText, UPDATE_DESCRIBE_KEYBOARD);
+        $setTimeMessage = makeSetTimeMessage($userButtonAnswer);
+        createParamsSendKeyboard($chatId, $setTimeMessage, UPDATE_DESCRIBE_KEYBOARD);
         invertDbButtonState($chatId, TIME_BUTTON);
     }
 
@@ -55,6 +66,4 @@ if (checkPostMethod())
         invertDbButtonState($chatId, DESCRIBE_BUTTON);
         throwChatNoteTime($chatId);
     }
-
-    exit();
 }

@@ -1,20 +1,27 @@
 <?php
 function checkPostMethod(): bool
 {
-    return ($_SERVER['REQUEST_METHOD'] === 'POST') ? true : false;
+    return ($_SERVER['REQUEST_METHOD'] === 'POST');
 }
 
 function checkCallback(): bool
 {
     $requestArr = getUserRequestArr();
-    return array_key_exists('callback_query', $requestArr) ? true : false;
+    return array_key_exists('callback_query', $requestArr);
 }
 
 function getUserRequestArr(): array
 {
     $request = file_get_contents('php://input');
-    $res = json_decode($request, 1);
-    return $res;
+    if ($request != null)
+    {
+        $res = json_decode($request, 1);
+    }
+    else
+    {
+        $res = [];
+    }
+    return $res ;
 }
 
 function getUserRequestParam(string $param): string
@@ -22,35 +29,32 @@ function getUserRequestParam(string $param): string
     $request = getUserRequestArr();
     if (checkCallback())
     {
-        if ($param === 'chat_id')
+        if ($param === CHAT_ID)
         {
             return $request['callback_query']['message']['chat']['id'];
         }
-        if ($param === 'user_message')
+        if ($param === USER_MESSAGE_ANSWER)
         {
             return $request['callback_query']['message']['text'];
         }
-        if (($param === 'user_button_answer') || ($param === 'time'))
+        if (($param === USER_BUTTON_ANSWER) || ($param === 'time'))
         {
             return $request['callback_query']['data'];
         }
     }
     else
     {
-        if ($param === 'chat_id')
+        if ($param === CHAT_ID)
         {
             return $request['message']['chat']['id'];
         }
-        if ($param === 'user_message')
+        if ($param === USER_MESSAGE_ANSWER)
         {
             return $request['message']['text'];
         }
-        if ($param === 'user_button_answer')
+        if ($param === USER_BUTTON_ANSWER)
         {
-            return 'mistace';
+            return 'mistake';
         }
     }
 }
-
-
-

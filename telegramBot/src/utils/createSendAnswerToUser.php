@@ -1,7 +1,7 @@
 <?php
 function sendMessage(array $params)
 {
-    $urlSendMessage = 'https://api.telegram.org/bot' . TOKEN . '/sendMessage?' . http_build_query($params);
+    $urlSendMessage = TELEGRAM_URL_WITHOUT_PARAMS . http_build_query($params);
     file_get_contents($urlSendMessage);
 }
 
@@ -25,38 +25,26 @@ function createParamsSendMessage(string $chatId, string $text)
     sendMessage($params);
 }
 
+function makeSetTimeMessage(int $userInstalledTime): string
+{
+    return 'Иофрмация поступит в ' . $userInstalledTime . ':00';
+}
+
 function sendInfoToUsers()
 {
     $recordsNum = countRecordsInDb();
     $mainInfo = getFuturesInfo();
     $currHour = getSyncHour();
-    for($count = 1; $count < $recordsNum; $count += 10)
+    for($count = 1; $count <= $recordsNum; $count += AUTOINCREMENT_OFFSET)
     {
         $chatId = takeChatIdFromDb($count);
         if (checkSubscribe($chatId))
         {
             $userInfoTime = (int)getNoteTime($chatId);
-            if ($userInfoTime == $currHour)
+            if ($userInfoTime === $currHour)
             {
                 createParamsSendKeyboard($chatId, $mainInfo, UPDATE_DESCRIBE_KEYBOARD);
             }
-        }
-    }
-}
-
-function testSending()
-{
-    $recordsNum = countRecordsInDb();
-    $mainInfo = getFuturesInfo();
-    $currHour = getSyncHour();
-    for($count = 1; $count < $recordsNum; $count += 10)
-    {
-        $chatId = takeChatIdFromDb($count);
-        if (checkSubscribe($chatId))
-        {
-            $userInfoTime = (int)getNoteTime($chatId);
-            $test_info = $currHour . ' ' . $userInfoTime;
-            createParamsSendKeyboard($chatId, $test_info, UPDATE_DESCRIBE_KEYBOARD);
         }
     }
 }
