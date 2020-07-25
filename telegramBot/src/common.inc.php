@@ -1,9 +1,0 @@
-<?php
-require_once('config/apiDbCodesConfig.php');
-require_once('config/buttonsKeyboardsConfig.php');
-require_once('config/textMistakeOffsetConfig.php');
-require_once('utils/processAnswerFromUser.php');
-require_once('utils/database.php');
-require_once('utils/createSendAnswerToUser.php');
-require_once('utils/checkingUserCommand.php');
-require_once('utils/processOtherServiceInfo.php');
